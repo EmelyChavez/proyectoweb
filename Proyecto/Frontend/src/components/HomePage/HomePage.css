@@ -59,4 +59,62 @@
     color: #19486D;
     cursor: pointer;
   }
+  /* Promociones */
+.promotions-section {
+    width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  .promotions-title {
+    font-size: 2rem;
+    color: #6E7AE6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Carrusel */
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* Ancho total para 3 imágenes */
+  }
+  
+  .carousel-images img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Flechas del carrusel */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1;
+  }
+  
+  .carousel-arrow.left {
+    left: 10px;
+  }
+  
+  .carousel-arrow.right {
+    right: 10px;
+  }
   
