@@ -105,17 +105,15 @@
   transform: scale(1.1);
 }
 
-/* Estilo para el botón de 'male' (azul) */
 .gender-button.selected#male {
-  background-color: #007bff;  /* Azul para macho */
+  background-color: #007bff; 
   color: white;
 }
 
 .gender-button.selected#male i {
-  color: white;  /* El ícono será blanco */
+  color: white;  
 }
 
-/* Estilo para el botón de 'female' (rojo) */
 .gender-button.selected#female {
   background-color: #ff4c4c;  /* Rojo para hembra */
   color: white;
