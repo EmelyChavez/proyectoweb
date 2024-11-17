@@ -1,14 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Appointment.css";
-import hamster from "../../assets/hamster.png"; 
-import Decoracion from "../../assets/decoracion.png"; 
+import hamster from "../../assets/hamster.png";
+import Decoracion from "../../assets/decoracion.png";
 
 const generateTimeSlots = (start, end, interval) => {
     const times = [];
     let current = new Date();
     current.setHours(...start);
     const endTime = new Date();
-    endTime.setHours(...end); 
+    endTime.setHours(...end);
 
     while (current <= endTime) {
         const hours = current.getHours();
@@ -23,6 +24,7 @@ const generateTimeSlots = (start, end, interval) => {
 };
 
 const Appointment = () => {
+    const navigate = useNavigate();
     const timeSlots = generateTimeSlots([7, 0], [17, 30], 30);
 
     return (
@@ -69,9 +71,9 @@ const Appointment = () => {
                 <img src={hamster} alt="Hamster" className="hamster-img" />
             </div>
             <img id="decoracion-image-left" src={Decoracion} alt="Decoracion" />
-            {}
-            <button className="close-button">
-                <i className="fas fa-times"></i> {}
+            { }
+            <button className="close-button" onClick={() => navigate("/sobre-nosotros")}>
+                <i className="fas fa-times"></i> { }
             </button>
         </div>
     );
