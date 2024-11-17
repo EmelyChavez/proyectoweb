@@ -1,0 +1,187 @@
+.homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f5faff;
+    font-family: 'Quicksand', 'Roboto', sans-serif;
+    overflow: hidden;
+    flex-direction: column;
+  }
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #6E7AE6;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000; 
+  }
+  
+  .navbar-logo {
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: #19486D;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #6E7AE6;
+  }
+  
+  .navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logout-button {
+    background-color: #19486D;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #6E7AE6;
+  }
+  
+  .user-icon {
+    font-size: 24px;
+    color: #19486D;
+    cursor: pointer;
+  }
+  #decoracion-image-top-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    transform: rotate(90deg) scaleY(-1);
+  }
+  
+.promotions-section {
+    width: 90%;
+    margin: 5rem auto auto auto;
+    text-align: center;
+  }
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 80%; 
+    margin: 0 auto;
+  }
+  
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-images img {
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+  }
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%; 
+    max-width: 500px; 
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+  
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .carousel-images img {
+    min-width: 100%; 
+    height: auto;
+    object-fit: cover; 
+    border-radius: 10px;
+  }
+  
+  
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #19486D;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #6E7AE6;
+  }
+  
+  .dot:hover {
+    background-color: #6E7AE6;
+  }
+  .nuestros-servicios {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+.servicio-card {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 60%; 
+    height: 200px; 
+    margin: 20px auto; 
+    background-color: rgba(84, 226, 207, 0.1); 
+    border-radius: 60px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgb(110, 122, 230, 0.8);
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+  }
+  
+  .servicio-card:hover {
+    transform: scale(1.05); 
+    background-color: rgba(84, 226, 207, 0.2); 
+  }
+  
+  .servicio-imagen {
+    height: 120px; 
+    width: 120px; 
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+ 

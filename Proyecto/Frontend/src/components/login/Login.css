@@ -1,0 +1,82 @@
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5faff;
+    font-family: 'Quicksand', 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  
+  #logo-principal {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  #google-button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 30vh;
+    background-color: #c4e3f7;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #google-button {
+    width: 70%;
+    height: 30%;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #606060;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  #google-logo {
+    width: 24px;
+    margin-right: 10px;
+  }
+  
+  #dog-image {
+    position: absolute;
+    bottom: -1%;
+    right: 0%;
+    width: 14vw;
+    max-width: 90%;
+  }
+  
+  #decoracion-image-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20vw;
+    max-width: 100%;
+  }
+  
+  #decoracion-image-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20vw;
+    max-width: 100%;
+    transform: rotate(90deg) scaleY(-1);
+  }
+  
