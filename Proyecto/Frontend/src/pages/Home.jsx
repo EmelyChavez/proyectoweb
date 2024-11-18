@@ -4,7 +4,8 @@ import HomePage from "../components/homePage/HomePage";
 import PetRegistration from "../components/petRegistration/PetRegistration";
 import Appointment from "../components/appointment/Appointment";
 import MyAppointment from "../components/myAppointment/MyAppointment";
-import MyPet from "../components/myPet/MyPet"
+import MyPet from "../components/myPet/MyPet";
+import VaccinationCard from "../components/vaccinationCard/VaccinationCard"; // Importamos el nuevo componente
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <Route path="/agendar-cita" element={<Appointment />} />
         <Route path="/mis-citas" element={<MyAppointment />} />
         <Route path="/mis-mascotas" element={<MyPet />} />
+        <Route path="/tarjeta-vacunas/:petId" element={<VaccinationCard />} /> {/* Nueva ruta */}
       </Routes>
     </Router>
   );
