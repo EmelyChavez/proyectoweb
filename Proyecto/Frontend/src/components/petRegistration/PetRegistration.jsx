@@ -1,9 +1,11 @@
 import React from "react";
 import "./PetRegistration.css";
+import { useNavigate } from "react-router-dom";
 import editImage from "../../assets/EditarMascota.png";
 import Decoracion from "../../assets/decoracion.png";
 
 const PetRegistration = () => {
+  const navigate = useNavigate();
   const [gender, setGender] = React.useState("");
 
   const handleGenderSelect = (selectedGender) => {
@@ -13,10 +15,9 @@ const PetRegistration = () => {
 
   return (
     <div className="pet-registration-container">
-
+      <h1 className="title">Registrar Perfil De Mascota</h1>
       <img id="decoracion-image-top-right" src={Decoracion} alt="Decoracion" />
 
-      <h1 className="title">Registrar perfil de mascota</h1>
 
       <div className="profile-image-container">
         <img src={editImage} alt="Editar mascota" className="profile-image" />
@@ -73,10 +74,8 @@ const PetRegistration = () => {
 
       </div>
 
-      <h2 className="subtitle">Información Adicional</h2>
-
-
       <form className="form">
+        <h2 className="subtitle">Información Adicional</h2>
         <div className="form-group">
           <label htmlFor="raza">Raza</label>
           <input id="raza" type="text" />
@@ -88,7 +87,7 @@ const PetRegistration = () => {
         </div>
 
         <div className="button-group">
-          <button type="button" className="exit-button">
+          <button type="button" className="exit-button" onClick={() => navigate("/sobre-nosotros")}>
             <i className="fas fa-sign-out-alt"></i> Salir
           </button>
           <button type="submit" className="save-button">
