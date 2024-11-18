@@ -35,7 +35,7 @@ const deleteAppointment = (appointmentId) => {
     )}
       <button className="boton-salir" onClick={() => navigate("/sobre-nosotros")}>
       <i className="fas fa-times"></i></button>
-      <img id="decoracion-image-left" src={Decoracion} alt="Decoracion" />
+      <img id="decoracion-image-top-left" src={Decoracion} alt="Decoracion" />
 
     </div>
     

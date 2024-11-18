@@ -127,7 +127,7 @@ const Appointment = () => {
                 </form>
                 <img src={hamster} alt="Hamster" className="hamster-img" />
             </div>
-            <img id="decoracion-image-left" src={Decoracion} alt="Decoracion" />
+            <img id="decoracion-image-bottom-left" src={Decoracion} alt="Decoracion" />
             { }
             <button className="close-button" onClick={() => navigate("/sobre-nosotros")}>
                 <i className="fas fa-times"></i> { }

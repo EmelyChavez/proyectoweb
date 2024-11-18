@@ -16,7 +16,7 @@ export const Login = () => {
         </button>
       </div>
       <img id="dog-image" src={PerroYGato} alt="Perro y Gato" />
-      <img id="decoracion-image-left" src={Decoracion} alt="Decoracion" />
+      <img id="decoracion-image-bottom-left" src={Decoracion} alt="Decoracion" />
       <img id="decoracion-image-top-right" src={Decoracion} alt="Decoracion" />
     </div>
   );

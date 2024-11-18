@@ -9,13 +9,13 @@
   position: relative;
   overflow: hidden;
   flex-direction: column;
-  box-sizing: border-box; /* Asegura que padding/margin no afecte el ancho */
+  box-sizing: border-box;
 }
 
 .title {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 2rem; /* Aumenta el tamaño de la fuente para hacerlo más destacado */
+  font-size: 2rem; 
 }
 
 .details-wrapper {
@@ -30,14 +30,13 @@
 }
 
 .pet-details {
-  background: #ffffff;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 20px;
   flex: 1.5;
   height: 100%;
+  position: relative; 
 }
 
 .pet-photo {
@@ -47,8 +46,8 @@
 }
 
 .vaccination-image {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
@@ -77,23 +76,20 @@ h2{
   display: flex;
   justify-content: space-between; /* Asegura que los detalles estén más separados */
   gap: 20px;
-  margin: 15px 0;
+  margin-bottom: 60px;
   width: 100%;
 }
 
 .detail {
   border: 3px solid #6e7ae6;
-  border-radius: 8px;
+  border-radius: 20px;
   text-align: center;
   width: 150px; 
 }
 
-
-
-
 .breed {
   font-size: 1.1rem;
-  margin: 15px 0;
+  margin-top: 50px;
   color: #606060;
 }
 
@@ -104,11 +100,12 @@ h2{
 
 .vaccine-item {
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
-  padding: 8px;
+  padding: 10px;
   margin: 5px 0;
   border: 3px solid #6e7ae6;
-  border-radius: 8px;
+  border-radius: 20px;
   background: #f5f8ff;
 }
 
@@ -127,4 +124,11 @@ h2{
 .close-button:hover {
   color: #5563c1;
   transform: scale(1.2);
+}
+#decoracion-image-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20vw;
+  max-width: 100%;
 }
