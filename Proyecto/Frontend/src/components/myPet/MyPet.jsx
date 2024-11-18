@@ -20,7 +20,7 @@ const [pets, setPets] = useState([]);
   };
 
   const viewVaccinationCard = (petId) => {
-    navigate(`/tarjeta-vacunas/${petId}`); // Navega a la página de tarjeta de vacunas
+    navigate(`/tarjeta-vacunas/${petId}`); 
   };
   return (
     <div className="my-pet-container">
