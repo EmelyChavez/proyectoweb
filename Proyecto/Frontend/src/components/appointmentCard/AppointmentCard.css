@@ -4,10 +4,9 @@
     justify-content: space-between;
     border-radius: 120px;
     border: 3px solid #6e7ae6;
-    margin: 16px 0;
+    margin: 16px;
     width: 100%;
-    max-width: 1600px; 
-    overflow: hidden;
+    max-width: 100%; 
     padding: 16px; 
 }
 
