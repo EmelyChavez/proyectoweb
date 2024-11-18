@@ -7,7 +7,7 @@ import Appointment from "./components/appointment/Appointment";
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <PetRegistration/>
     </div>
   );
 }
