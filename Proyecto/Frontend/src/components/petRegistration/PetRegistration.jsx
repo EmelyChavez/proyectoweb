@@ -32,10 +32,15 @@ const PetRegistration = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file); 
-      setPetImage(imageUrl);
-      setPetData((prevData) => ({ ...prevData, image: imageUrl }));
-      console.log("Imagen seleccionada: ", imageUrl);
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const imageBase64 = reader.result; // Imagen en formato Base64
+        setPetImage(imageBase64); // Actualiza el estado local
+        setPetData((prevData) => ({ ...prevData, image: imageBase64 })); // Guarda la imagen en petData
+      };
+  
+      reader.readAsDataURL(file); 
     }
   };
 
@@ -77,7 +82,7 @@ const PetRegistration = () => {
           id="image-input"
           type="file"
           onChange={handleImageChange}
-          style={{ display: "none" }}  // Ocultar el input
+          style={{ display: "none" }}
           accept="image/*"
         />
 
