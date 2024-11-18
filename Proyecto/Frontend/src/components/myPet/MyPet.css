@@ -1,44 +1,39 @@
 .my-pet-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
     background-color: #f5faff;
     font-family: 'Quicksand', 'Roboto', sans-serif;
-    position: relative;
     overflow: hidden;
-    padding: 20px;
-    box-sizing: border-box;
+    flex-direction: column;
 }
 
 
 .close-btn {
-    font-size: 1.5rem;
-    background-color: #6E7AE6;
-    color: #ffffff;
+    position: fixed;
+    top: 40px;
+    right: 50px;
+    background-color: transparent;
     border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-weight: bold;
+    font-size: 3rem;
+    color: #6e7ae6;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-}
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .close-button:hover {
+    color: #5563c1;
+    transform: scale(1.2);
+  }
+  
 
-.close-btn:hover {
-    background-color: #5563c1;
-}
-
-.close-btn:hover {
-    background-color: #2E4668;
-}
-
-#decoracion-image-left {
-    position: absolute;
-    bottom: 0;
+#decoracion-image {
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 20vw;
     max-width: 100%;
+    transform: rotate(180deg) scaleX(-1);
+
 }

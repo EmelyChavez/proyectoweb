@@ -40,8 +40,9 @@ const [pets, setPets] = useState([]);
         </div>
       )}
       <button className="close-btn" onClick={() => navigate("/sobre-nosotros")}>
-        Salir</button>
-      <img id="decoracion-image-left" src={Decoracion} alt="Decoracion" />
+      <i className="fas fa-times"></i> { }
+      </button>
+      <img id="decoracion-image" src={Decoracion} alt="Decoracion" />
 
     </div>
     

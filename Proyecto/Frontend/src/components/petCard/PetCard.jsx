@@ -10,12 +10,14 @@ const PetCard = ({ pet, onDelete, onViewVaccinationCard }) => {
         <p className="pet-breed">Raza: {pet.breed}</p>
       </div>
       <div className="pet-actions">
-        <button className="btn view-btn" onClick={() => onViewVaccinationCard(pet.id)}>
-          Ver tarjeta de vacuna
-        </button>
         <button className="btn delete-btn" onClick={() => onDelete(pet.id)}>
-          Eliminar
+          <i className="fas fa-trash"></i>
         </button>
+        <div className="right-container">
+          <button className="btn view-btn" onClick={() => onViewVaccinationCard(pet.id)}>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   );
