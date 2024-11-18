@@ -17,7 +17,7 @@ const Home = () => {
         <Route path="/agendar-cita" element={<Appointment />} />
         <Route path="/mis-citas" element={<MyAppointment />} />
         <Route path="/mis-mascotas" element={<MyPet />} />
-        <Route path="/tarjeta-vacunas/:petId" element={<VaccinationCard />} /> {/* Nueva ruta */}
+        <Route path="/tarjeta-vacunas/:petId" element={<VaccinationCard />} /> 
       </Routes>
     </Router>
   );

@@ -1,79 +1,79 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { FaPaw } from "react-icons/fa"; // Importamos el ícono de react-icons
+import { FaPaw } from "react-icons/fa";
 import "./VaccinationCard.css";
 
 const VaccinationCard = () => {
   const navigate = useNavigate();
-  const { petId } = useParams(); // Obtenemos el ID de la mascota desde la URL
+  const { petId } = useParams(); 
   const [petData, setPetData] = useState(null);
 
   useEffect(() => {
-    // Obtenemos las mascotas desde el localStorage
     const savedPets = JSON.parse(localStorage.getItem("pets")) || [];
-    // Buscamos la mascota específica
     const pet = savedPets.find((p) => p.id === petId);
-    setPetData(pet || null); // Si no se encuentra la mascota, dejamos el estado en null
+    setPetData(pet || null);
   }, [petId]);
 
   if (!petData) {
-    return <h2>No se encontró información de esta mascota.</h2>; // Mensaje si no hay datos
+    return <h2>No se encontró información de esta mascota.</h2>; 
   }
 
   return (
     <div className="vaccination-card">
       <h1 className="title">Tarjeta de Vacunación</h1>
+      <div className="details-wrapper">
       <div className="pet-details">
         <div className="pet-photo">
-          {/* Si no hay imagen, mostramos un ícono de huella */}
+          {}
           {petData.image ? (
             <img
               src={petData.image}
               alt={petData.name}
-              className="pet-image"
+              className=" vaccination-image"
             />
           ) : (
             <FaPaw className="pet-icon" />
           )}
-          <h2>{petData.name}</h2>
+          <h3>{petData.name}</h3>
         </div>
         <div className="details-container">
           <div className="detail">
-            <p>Especie</p>
-            <span>{petData.species}</span>
+            <h2>Especie</h2>
+            <h2 className="data">{petData.species}</h2>
           </div>
           <div className="detail">
-            <p>Edad</p>
-            <span>{petData.age}</span>
+            <h2>Edad</h2>
+            <h2 className="data">{petData.age}</h2>
           </div>
           <div className="detail">
-            <p>Género</p>
-            <span>{petData.gender}</span>
+            <h2>Género</h2>
+            <h2 className="data">{petData.gender}</h2>
           </div>
         </div>
-        <p className="breed">
+        <h2 className="breed">
           <strong>Raza:</strong> {petData.breed} <br />
           <strong>Peso (kg):</strong> {petData.weight}
-        </p>
+        </h2>
       </div>
       <div className="vaccination-info">
         <div className="vaccine-item">
-          <p>Vacuna</p>
-          <p>Fecha</p>
+          <h2>Vacuna</h2>
+          <h2>Fecha</h2>
         </div>
         {petData.vaccines?.length > 0 ? (
           petData.vaccines.map((vaccine, index) => (
             <div className="vaccine-item" key={index}>
-              <p>{vaccine.name}</p>
-              <p>{vaccine.date}</p>
+              <h2 className="data">{vaccine.name}</h2>
+              <h2 className="data">{vaccine.date}</h2>
             </div>
           ))
         ) : (
-          <p>No hay vacunas registradas.</p>
+          <h2 className="data">No hay vacunas registradas.</h2>
         )}
+        </div>
       </div>
-      <button className="close-btn" onClick={() => navigate("/mis-mascotas")}>
-        Cerrar
+      <button className="close-button" onClick={() => navigate("/mis-mascotas")}>
+      <i className="fas fa-times"></i>
       </button>
     </div>
   );
