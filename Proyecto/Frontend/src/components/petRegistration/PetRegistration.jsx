@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PetRegistration.css";
 import { useNavigate } from "react-router-dom";
 import editImage from "../../assets/EditarMascota.png";
@@ -7,9 +7,58 @@ import Decoracion from "../../assets/decoracion.png";
 const PetRegistration = () => {
   const navigate = useNavigate();
   const [gender, setGender] = React.useState("");
+  const [petImage, setPetImage] = useState(null);
+
+  const [petData, setPetData] = useState({
+    name: "",
+    species: "",
+    age: "",
+    ageUnit: "años",
+    breed: "",
+    weight: "",
+    image: petImage,
+  });
+
 
   const handleGenderSelect = (selectedGender) => {
     setGender(selectedGender);
+  };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setPetData((prevData) => ({ ...prevData, [id]: value }));
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file); // Crea una URL temporal para la imagen seleccionada
+      setPetImage(imageUrl);
+      setPetData((prevData) => ({ ...prevData, image: imageUrl }));
+      console.log("Imagen seleccionada: ", imageUrl);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!petData.name || !petData.species || !petData.age || !gender || !petData.breed || !petData.weight | !petData.image) {
+      alert("Por favor, completa todos los campos requeridos.");
+      return;
+  }
+
+    const newPet = {
+      ...petData,
+      gender,
+      id: crypto.randomUUID(),
+    };
+
+    // Guardar en localStorage
+    const pets = JSON.parse(localStorage.getItem("pets")) || [];
+    localStorage.setItem("pets", JSON.stringify([...pets, newPet]));
+
+    // Redirigir a la lista de mascotas
+    navigate("/mis-mascotas");
   };
 
 
@@ -20,27 +69,37 @@ const PetRegistration = () => {
 
 
       <div className="profile-image-container">
-        <img src={editImage} alt="Editar mascota" className="profile-image" />
-        <button className="edit-button">
+        <img src={petData.image || editImage} alt="Editar mascota" className="profile-image" />
+
+        <button className="edit-button" onClick={() => document.getElementById("image-input").click()}>
           <i className="fas fa-edit"></i>
         </button>
+
+        <input
+          id="image-input"
+          type="file"
+          onChange={handleImageChange}
+          style={{ display: "none" }}  // Ocultar el input
+          accept="image/*"
+        />
+
         <div className="form-group">
           <label htmlFor="nombre">Nombre</label>
-          <input id="nombre" type="text" />
+          <input id="name" type="text" onChange={handleInputChange}/>
         </div>
       </div>
 
       <div className="info-grid">
         <div className="info-box">
-          <label htmlFor="especie">Especie</label>
-          <input id="especie" type="text" />
+          <label htmlFor="species">Especie</label>
+          <input id="species" type="text" onChange={handleInputChange}/>
         </div>
 
         <div className="info-box">
           <label htmlFor="edad">Edad</label>
           <div className="age-container">
-            <input id="edad" placeholder="0" type="number" min="0" />
-            <select id="unidad" className="age-unit">
+            <input id="age" placeholder="0" type="number" min="0" onChange={handleInputChange}/>
+            <select id="ageUnit" onChange={handleInputChange} className="age-unit">
               <option value="años">Años</option>
               <option value="meses">Meses</option>
             </select>
@@ -74,16 +133,16 @@ const PetRegistration = () => {
 
       </div>
 
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h2 className="subtitle">Información Adicional</h2>
         <div className="form-group">
-          <label htmlFor="raza">Raza</label>
-          <input id="raza" type="text" />
+          <label htmlFor="breed">Raza</label>
+          <input id="breed" type="text" onChange={handleInputChange}/>
         </div>
 
         <div className="form-group">
-          <label htmlFor="peso">Peso (kg)</label>
-          <input id="peso" type="number" placeholder="0" min={0} step="0.1" />
+          <label htmlFor="weight">Peso (kg)</label>
+          <input id="weight" type="number" placeholder="0" min={0} step="0.1" onChange={handleInputChange}/>
         </div>
 
         <div className="button-group">
