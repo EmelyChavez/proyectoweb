@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import logo from "../../assets/logo.png";
 import promo1 from "../../assets/promo1.jpg";
@@ -36,11 +37,11 @@ const HomePage = () => {
             <header className="navbar">
                 <img src={logo} alt="Logo" className="navbar-logo" />
                 <nav className="navbar-links">
-                    <a href="#sobre-nosotros">Sobre Nosotros</a>
-                    <a href="#registrar-mascota">Registrar Mascota</a>
-                    <a href="#mis-mascotas">Mis Mascotas</a>
-                    <a href="#mis-citas">Mis Citas</a>
-                    <a href="#agendar-cita">Agendar Cita</a>
+                    <Link to="/sobre-nosotros">Sobre Nosotros</Link>
+                    <Link to="/registrar-mascota">Registrar Mascota</Link>
+                    <Link to="/mis-mascotas">Mis Mascotas</Link>
+                    <Link to="/mis-citas">Mis Citas</Link>
+                    <Link to="/agendar-cita">Agendar Cita</Link>
                 </nav>
                 <div className="navbar-user">
                     <button className="logout-button">Logout</button>

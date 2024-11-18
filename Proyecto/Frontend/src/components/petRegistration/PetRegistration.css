@@ -105,24 +105,22 @@
   transform: scale(1.1);
 }
 
-/* Estilo para el botón de 'male' (azul) */
 .gender-button.selected#male {
-  background-color: #007bff;  /* Azul para macho */
+  background-color: #19486D;
   color: white;
 }
 
 .gender-button.selected#male i {
-  color: white;  /* El ícono será blanco */
+  color: white;  
 }
 
-/* Estilo para el botón de 'female' (rojo) */
 .gender-button.selected#female {
-  background-color: #ff4c4c;  /* Rojo para hembra */
+  background-color: #d86dc1; 
   color: white;
 }
 
 .gender-button.selected#female i {
-  color: white;  /* El ícono será blanco */
+  color: white;  
 }
 
 .info-box {
@@ -155,6 +153,7 @@
   padding: 8px;
   font-size: 0.9rem;
   color: #606060;
+  font-weight: bold;
   background-color: transparent;
 }
 
@@ -162,7 +161,7 @@
   position: absolute;
   top: 10px;
   left: 100px;
-  color: #6e7ae6;
+  color: #19486D;
   font-size: 2rem;
 }
 
@@ -190,10 +189,7 @@
   gap: 8px;
 }
 
-.form-group label {
-  color: #606060;
-  font-size: 1rem;
-}
+
 
 .form-group input {
   width: 100%;
@@ -203,6 +199,7 @@
   padding: 8px;
   font-size: 1rem;
   color: #606060;
+  font-weight: bold;
   background-color: transparent;
 }
 
@@ -230,11 +227,27 @@
 
 .exit-button {
   background-color: #606060;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
+.exit-button:hover {
+  background-color: #868383;
+}
+
 
 .save-button {
   background-color: #6e7ae6;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
+.save-button:hover {
+  background-color: #5563c1;
+}
+
 
 .large {
   width: 283px;

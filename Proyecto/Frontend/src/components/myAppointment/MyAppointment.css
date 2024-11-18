@@ -1,0 +1,44 @@
+.mis-citas-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5faff;
+    font-family: 'Quicksand', 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.boton-salir {
+    font-size: 2rem;
+    background-color: #6E7AE6;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.boton-salir:hover {
+    background-color: #5563c1;
+}
+
+.boton-salir:hover {
+    background-color: #2E4668;
+}
+
+#decoracion-image-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20vw;
+    max-width: 100%;
+}
