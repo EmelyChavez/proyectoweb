@@ -21,7 +21,7 @@
     transition: transform 0.2s ease, color 0.2s ease;
   }
   
-  .close-button:hover {
+  .close-btn:hover {
     color: #5563c1;
     transform: scale(1.2);
   }

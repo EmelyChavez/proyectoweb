@@ -32,7 +32,7 @@ const PetRegistration = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file); // Crea una URL temporal para la imagen seleccionada
+      const imageUrl = URL.createObjectURL(file); 
       setPetImage(imageUrl);
       setPetData((prevData) => ({ ...prevData, image: imageUrl }));
       console.log("Imagen seleccionada: ", imageUrl);
@@ -53,11 +53,9 @@ const PetRegistration = () => {
       id: crypto.randomUUID(),
     };
 
-    // Guardar en localStorage
     const pets = JSON.parse(localStorage.getItem("pets")) || [];
     localStorage.setItem("pets", JSON.stringify([...pets, newPet]));
 
-    // Redirigir a la lista de mascotas
     navigate("/mis-mascotas");
   };
 
