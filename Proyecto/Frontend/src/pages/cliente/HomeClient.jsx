@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./HomePage.css";
+import "./HomeClient.css";
 import logo from "../../assets/logo.png";
 import promo1 from "../../assets/promo1.jpg";
 import promo2 from "../../assets/promo2.jpg";
@@ -12,7 +12,7 @@ import servicio3 from "../../assets/servicio3.jpg";
 import Decoracion from "../../assets/decoracion.png";
 
 
-const HomePage = () => {
+const HomeClient = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [promo1, promo2, promo3, promo4];
 
@@ -33,7 +33,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="homepage-container">
+        <div className="homeclient-container">
             <header className="navbar">
                 <img src={logo} alt="Logo" className="navbar-logo" />
                 <nav className="navbar-links">
@@ -108,4 +108,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default HomeClient;

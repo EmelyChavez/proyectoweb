@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaPaw } from "react-icons/fa";
-import Decoracion from "../../assets/decoracion.png";
+import Decoracion from "../../../assets/decoracion.png";
 import "./VaccinationCard.css";
 
 const VaccinationCard = () => {

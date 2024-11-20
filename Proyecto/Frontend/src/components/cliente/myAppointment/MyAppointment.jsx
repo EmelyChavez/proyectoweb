@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyAppointment.css";
-import Decoracion from "../../assets/decoracion.png";
+import Decoracion from "../../../assets/decoracion.png";
 import AppointmentCard from "../appointmentCard/AppointmentCard";
 
 const MyAppointment = () => {

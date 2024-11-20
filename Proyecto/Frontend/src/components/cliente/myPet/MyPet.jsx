@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyPet.css";
 import PetCard from "../petCard/PetCard";
-import Decoracion from "../../assets/decoracion.png";
+import Decoracion from "../../../assets/decoracion.png";
 
 const MyPet = () => {
 const navigate = useNavigate();

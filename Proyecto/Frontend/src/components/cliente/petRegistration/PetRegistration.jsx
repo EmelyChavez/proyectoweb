@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./PetRegistration.css";
 import { useNavigate } from "react-router-dom";
-import editImage from "../../assets/EditarMascota.jpg";
-import Decoracion from "../../assets/decoracion.png";
+import editImage from "../../../assets/EditarMascota.jpg";
+import Decoracion from "../../../assets/decoracion.png";
 
 const PetRegistration = () => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Appointment.css";
-import hamster from "../../assets/hamster.png";
-import Decoracion from "../../assets/decoracion.png";
+import hamster from "../../../assets/hamster.png";
+import Decoracion from "../../../assets/decoracion.png";
 
 const generateTimeSlots = (start, end, interval) => {
     const times = [];
