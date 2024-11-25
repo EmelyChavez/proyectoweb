@@ -22,8 +22,11 @@ const VaccinationCard = () => {
   return (
     <div className="vaccination-card">
       <h1 className="title">Tarjeta de Vacunación</h1>
+
       <div className="details-wrapper">
+
         <div className="pet-details">
+
           <div className="pet-photo">
             { }
             {petData.image ? (
@@ -42,7 +45,9 @@ const VaccinationCard = () => {
             <strong>Raza:</strong> {petData.breed} <br />
             <strong>Peso (kg):</strong> {petData.weight}
           </h3>
+          
         </div>
+
         <div className="vaccination-info">
           <div className="details-container">
             <div className="detail">
@@ -66,10 +71,12 @@ const VaccinationCard = () => {
 
 
           </div>
+
           <div className="vaccine-item">
             <h2>Vacuna</h2>
             <h2>Fecha</h2>
           </div>
+
           <div className="vaccination-list">
             {petData.vaccines?.length > 0 ? (
               petData.vaccines.map((vaccine, index) => (
@@ -82,11 +89,15 @@ const VaccinationCard = () => {
               <h2 className="data">No hay vacunas registradas.</h2>
             )}
           </div>
+
         </div>
+
       </div>
+
       <button className="close-button" onClick={() => navigate("/mis-mascotas")}>
         <i className="fas fa-times"></i>
       </button>
+
       <img id="decoracion-image-left" src={Decoracion} alt="Decoracion" />
     </div>
   );

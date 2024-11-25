@@ -6,11 +6,19 @@ import Appointment from "../../components/cliente/appointment/Appointment";
 import MyAppointment from "../../components//cliente/myAppointment/MyAppointment";
 import MyPet from "../../components/cliente/myPet/MyPet";
 import VaccinationCard from "../../components/cliente/vaccinationCard/VaccinationCard";
+import HomeVet from "../../pages/veterinario/HomeVet";
+import SelectedPet from "../../components/veterinario/selectedPet/SelectedPet";
+import Appointments from "../../components/veterinario/appointments/Appointments";
+
 
 const Home = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/veterinario" element={<HomeVet />} />
+        <Route path="/informacion-mascota/:appointmentId" element={<SelectedPet />} />
+        <Route path="/citas-veterinario" element={<Appointments />} />
+
         <Route path="/" element={<HomeClient />} />
         <Route path="/sobre-nosotros" element={<HomeClient />} />
         <Route path="/registrar-mascota" element={<PetRegistration />} />

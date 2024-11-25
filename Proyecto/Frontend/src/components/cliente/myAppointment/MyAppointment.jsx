@@ -9,6 +9,7 @@ const navigate = useNavigate();
 const [appointments, setAppointments] = useState([]);
 useEffect(() => {
   const savedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
+  console.log("imprimiendo cita: ", savedAppointments);
   setAppointments(savedAppointments);
 }, []);
 

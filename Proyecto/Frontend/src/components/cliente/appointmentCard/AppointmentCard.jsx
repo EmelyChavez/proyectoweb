@@ -10,7 +10,7 @@ const AppointmentCard = ({ appointment, onDelete }) => {
                 className="appointment-pet-image"
             />
             <div className="appointment-info">
-                <h3 className="appointment-pet">{appointment?.pet}</h3>
+                <h3 className="appointment-pet">{appointment?.pet?.name}</h3>
                 <p className="appointment-service">Servicio: {appointment?.service}</p>
                 <p className="appointment-date">Fecha: {appointment?.date}</p>
                 <p className="appointment-time">Hora: {appointment?.time}</p>
