@@ -5,7 +5,7 @@ import PetRegistration from "../components/petRegistration/PetRegistration";
 import Appointment from "../components/appointment/Appointment";
 import MyAppointment from "../components/myAppointment/MyAppointment";
 import MyPet from "../components/myPet/MyPet";
-import VaccinationCard from "../components/vaccinationCard/VaccinationCard"; // Importamos el nuevo componente
+import VaccinationCard from "../components/vaccinationCard/VaccinationCard"; 
 
 const Home = () => {
   return (
