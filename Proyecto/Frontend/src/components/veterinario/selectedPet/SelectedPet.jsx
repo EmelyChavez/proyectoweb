@@ -73,34 +73,44 @@ export const SelectedPet = () => {
   return (
     <div className="selected-pet-container">
       <h1 className="title">Información de la Mascota</h1>
+      <img id="decoracion-image-top-right" src={Decoracion} alt="Decoracion" />
 
-      <form action="" className="main-box-vet" onSubmit={handleSubmit}>
-        <div className="pet-photo-vet">
-          {appointmentData.petImage ? (
-            <img
-              src={appointmentData.petImage}
-              alt={appointmentData.pet.name}
-              className="selectedPet-image"
-            />
-          ) : (
-            <FaPaw className="pet-iconVet" />
-          )}
+      <div className="profile-image-container-vet">
+        {appointmentData.petImage ? (
+          <img
+            src={appointmentData.petImage}
+            alt={appointmentData.pet.name}
+            className="profile-image-vet"
+          />
+        ) : (
+          <FaPaw className="pet-iconVet" />
+        )}
 
+        <div className="form-group-vet">
           <h1>{appointmentData.pet.name}</h1>
         </div>
 
-        <div className="info-box-vet species-vet">
-          <h3>Especie</h3>
-          <h3>{petData.species}</h3>
+        <div className="service-vet">
+          <h2>Servicio: {appointmentData.service}
+            <br /> Descripción: {appointmentData.description}</h2>
+          <h2></h2>
         </div>
 
-        <div className="info-box-vet age-vet">
-          <h3>Edad</h3>
-          <h3>{petData.age}</h3>
+      </div >
+
+      <div className="info-grid-vet">
+        <div className="info-box-vet">
+          <label>Especie</label>
+          <label>{petData.species}</label>
         </div>
 
-        <div className="info-box-vet gender-vet">
-          <h3>Género</h3>
+        <div className="info-box-vet">
+          <label>Edad</label>
+          <label>{petData.age}</label>
+        </div>
+
+        <div className="info-box-vet">
+          <label>Género</label>
           <div className="data">
             {petData.gender === 'male' ? (
               <i className="fas fa-mars male-icon"></i>
@@ -110,32 +120,32 @@ export const SelectedPet = () => {
           </div>
         </div>
 
-        <p className="">
-          <strong>Raza:</strong> {petData.breed} <br />
-          <strong>Peso (kg):</strong> {petData.weight} <br />
-          <strong>Servicio:</strong> {appointmentData.service}
-
-        </p>
-
-        <div className="description-box-vet">
-          <h3>Descripción</h3>
-          <p>
-            {appointmentData.description}
-          </p>
+        <div className="info-box-vet">
+          <label>Raza</label>
+          <label>{petData.breed}</label>
         </div>
 
-        <div className="notes-section">
-          <h3>Notas</h3>
+        <div className="info-box-vet">
+          <label>Peso</label>
+          <label>{petData.weight}</label>
+        </div>
+      </div>
+
+      <form action="" className="form-vet" onSubmit={handleSubmit}>
+
+        <div className="form1-group-vet">
+          <label>Notas</label>
           <textarea
             id="notes"
             className="notes-box"
             value={medicalRecordData.notes}
             onChange={handleInputChange}
             placeholder="Notas adicionales"
-          ></textarea>        </div>
+          ></textarea>
+        </div>
 
-        <div className="treatment-section">
-          <h3>Tratamiento</h3>
+        <div className="form1-group-vet">
+          <label>Tratamiento</label>
           <textarea
             id="treatment"
             className="treatment-box"
@@ -145,17 +155,17 @@ export const SelectedPet = () => {
           ></textarea>
         </div>
 
-        <button type="button" className="btn-vet assign">Asignar Cita</button>
-        <button type="submit" className="btn-vet save">Guardar</button>
-        <button type="button" className="btn-vet add-vaccine">Añadir Vacuna</button>
+        <div className="button-group-vet">
+          <button type="button" className="exit-button-vet" onClick={() => navigate("/citas-veterinario")}>
+            <i className="fas fa-sign-out-alt"></i> Salir
+          </button>
+          <button type="submit" className="save-button-vet">
+            <i className="fas fa-save"></i> Guardar perfil
+          </button>
+          <button type="button" className="btn-vet-assign">Asignar Cita</button>
+          <button type="button" className="btn-vet-add-vaccine">Añadir Vacuna</button>
+        </div>
       </form>
-
-
-      <button className="close-btnVet-pet" onClick={() => navigate("/citas-veterinario")}>
-        <i className="fas fa-times"></i>
-      </button>
-
-      <img id="decoracion-image-left" src={Decoracion} alt="Decoracion" />
     </div>
   );
 };
