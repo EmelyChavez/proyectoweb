@@ -10,8 +10,15 @@
   position: relative;
   overflow: hidden;
 }
-
-
+.infosp{
+  color: #606060;
+}
+.datasp{
+  color: #606060;
+}
+#notes, #treatment{
+  color: #606060;
+}
 .profile-image-container-vet {
   position: absolute;
   top: 120px;
@@ -53,9 +60,16 @@
   font-size: 1rem;
   gap: 8px;
 }
-
+.raza-peso-box{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  position: absolute;
+  top: 270px; 
+  left: 60%; 
+  transform: translateX(-50%);
+}
 .info-box-vet label {
-  color: #6e7ae6;
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 4px;
@@ -65,12 +79,6 @@
   position: absolute;
   top: 10px;
 }
-
-.subtitle {
-  color: #6e7ae6;
-  font-size: 1.5rem;
-}
-
 .form-vet {
   width: 40%;
   height: auto;
@@ -85,9 +93,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
-
+h2{
+  margin: 0;
+  text-align: center;
+}
 .form1-group-vet {
   display: flex;
   flex-direction: column;

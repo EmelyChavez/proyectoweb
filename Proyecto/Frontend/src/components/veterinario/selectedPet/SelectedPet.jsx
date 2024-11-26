@@ -8,8 +8,8 @@ export const SelectedPet = () => {
   const navigate = useNavigate();
   const { appointmentId } = useParams();
 
-  const [petData, setPetData] = useState(null);//cambiar
-  const [appointmentData, setAppointmentData] = useState(null);//cambiar
+  const [petData, setPetData] = useState(null);
+  const [appointmentData, setAppointmentData] = useState(null);
 
   const [medicalRecords, setMedicalRecords] = useState([]);
   const [medicalRecordData, setMedicalRecordData] = useState({
@@ -88,30 +88,36 @@ export const SelectedPet = () => {
 
         <div className="form-group-vet">
           <h1>{appointmentData.pet.name}</h1>
+          <div className="service-vet">
+            <h2>Servicio</h2>
+            <h2 className="infosp">
+              {appointmentData.service}
+            </h2>
+            <h2>Descripción</h2>
+            <h2 className="infosp">
+              {appointmentData.description}
+            </h2>
+          </div>
         </div>
 
-        <div className="service-vet">
-          <h2>Servicio: {appointmentData.service}
-            <br /> Descripción: {appointmentData.description}</h2>
-          <h2></h2>
-        </div>
+
 
       </div >
 
       <div className="info-grid-vet">
         <div className="info-box-vet">
-          <label>Especie</label>
-          <label>{petData.species}</label>
+          <label >Especie</label>
+          <label className="datasp">{petData.species}</label>
         </div>
 
         <div className="info-box-vet">
           <label>Edad</label>
-          <label>{petData.age}</label>
+          <label className="datasp">{petData.age}</label>
         </div>
 
         <div className="info-box-vet">
           <label>Género</label>
-          <div className="data">
+          <div className="datasp">
             {petData.gender === 'male' ? (
               <i className="fas fa-mars male-icon"></i>
             ) : petData.gender === 'female' ? (
@@ -119,18 +125,18 @@ export const SelectedPet = () => {
             ) : null}
           </div>
         </div>
-
+      </div>
+      <div className="raza-peso-box">
         <div className="info-box-vet">
           <label>Raza</label>
-          <label>{petData.breed}</label>
+          <label className="datasp">{petData.breed}</label>
         </div>
 
         <div className="info-box-vet">
-          <label>Peso</label>
-          <label>{petData.weight}</label>
+          <label>Peso (kg)</label>
+          <label className="datasp">{petData.weight}</label>
         </div>
       </div>
-
       <form action="" className="form-vet" onSubmit={handleSubmit}>
 
         <div className="form1-group-vet">
@@ -160,7 +166,7 @@ export const SelectedPet = () => {
             <i className="fas fa-sign-out-alt"></i> Salir
           </button>
           <button type="submit" className="save-button-vet">
-            <i className="fas fa-save"></i> Guardar perfil
+            <i className="fas fa-save"></i> Guardar consulta
           </button>
           <button type="button" className="btn-vet-assign">Asignar Cita</button>
           <button type="button" className="btn-vet-add-vaccine">Añadir Vacuna</button>
