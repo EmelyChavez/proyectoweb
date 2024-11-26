@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Appointment.css";
-import hamster from "../../assets/hamster.png";
-import Decoracion from "../../assets/decoracion.png";
+import hamster from "../../../assets/hamster.png";
+import Decoracion from "../../../assets/decoracion.png";
 
 const generateTimeSlots = (start, end, interval) => {
     const times = [];
@@ -28,7 +28,7 @@ const Appointment = () => {
     const [pets, setPets] = useState([]);
     const [appointments, setAppointments] = useState([]);
     const [appointmentData, setAppointmentData] = useState({
-        pet: "",
+        pet: { id: "", name: "" },
         service: "",
         description: "",
         petImage: "",
@@ -38,6 +38,7 @@ const Appointment = () => {
     const timeSlots = generateTimeSlots([7, 0], [17, 30], 30);
     useEffect(() => {
         const savedPets = JSON.parse(localStorage.getItem("pets")) || [];
+        console.log("Mascota seleccionada:", pet);
         setPets(savedPets);
     }, []);
 
@@ -48,9 +49,11 @@ const Appointment = () => {
             [id]: value,
         }));
         if (id === "pet") {
-            const selectedPet = pets.find((pet) => pet.name === value);
+            const [selectedId, selectedName] = value.split("|");
+            const selectedPet = pets.find((pet) => pet.id === selectedId);
             setAppointmentData((prevData) => ({
                 ...prevData,
+                pet: { id: selectedId, name: selectedName },
                 petImage: selectedPet ? selectedPet.image : "",
             }));
         }
@@ -61,7 +64,7 @@ const Appointment = () => {
         e.preventDefault();
 
         const { pet, service, date, time } = appointmentData;
-        if (!pet || !service || !date || !time) {
+        if (!pet.id || !service || !date || !time) {
             alert("Por favor, completa todos los campos obligatorios.");
             return;
         }
@@ -73,6 +76,7 @@ const Appointment = () => {
         const savedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
         localStorage.setItem("appointments", JSON.stringify([...savedAppointments, newAppointment]));
 
+        console.log(newAppointment);
         alert("Cita agendada correctamente.");
         navigate("/mis-citas");
     }
@@ -83,10 +87,10 @@ const Appointment = () => {
             <div className="appointment-card">
                 <form className="appointment-form" onSubmit={handleSubmit}>
                     <label htmlFor="pet">Mascota</label>
-                    <select id="pet" value={appointmentData.pet} onChange={handleInputChange}>
+                    <select id="pet" value={`${appointmentData.pet.id}|${appointmentData.pet.name}`} onChange={handleInputChange}>
                         <option value="">Seleccionar mascota</option>
                         {pets.map((pet) => (
-                            <option key={pet.id} value={pet.name}>
+                            <option key={pet.id} value={`${pet.id}|${pet.name}`}>
                                 {pet.name}
                             </option>
                         ))}
@@ -102,15 +106,15 @@ const Appointment = () => {
                     </select>
 
                     <label htmlFor="description">Descripción</label>
-                    <textarea 
-                        id="description" 
-                        name="description" 
+                    <textarea
+                        id="description"
+                        name="description"
                         value={appointmentData.description}
                         onChange={handleInputChange}
                         placeholder="Detalles adicionales"></textarea>
 
                     <label htmlFor="date">Fecha</label>
-                    <input type="date" id="date" name="date" value={appointmentData.date} onChange={handleInputChange}/>
+                    <input type="date" id="date" name="date" value={appointmentData.date} onChange={handleInputChange} />
                     <label htmlFor="time">Hora</label>
                     <select id="time" name="time" value={appointmentData.time} onChange={handleInputChange}>
                         <option value="">Seleccionar hora</option>

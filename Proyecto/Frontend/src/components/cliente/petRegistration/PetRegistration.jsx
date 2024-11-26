@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./PetRegistration.css";
 import { useNavigate } from "react-router-dom";
-import editImage from "../../assets/EditarMascota.jpg";
-import Decoracion from "../../assets/decoracion.png";
+import editImage from "../../../assets/EditarMascota.jpg";
+import Decoracion from "../../../assets/decoracion.png";
 
 const PetRegistration = () => {
   const navigate = useNavigate();
@@ -35,9 +35,9 @@ const PetRegistration = () => {
       const reader = new FileReader();
 
       reader.onload = () => {
-        const imageBase64 = reader.result; // Imagen en formato Base64
-        setPetImage(imageBase64); // Actualiza el estado local
-        setPetData((prevData) => ({ ...prevData, image: imageBase64 })); // Guarda la imagen en petData
+        const imageBase64 = reader.result;
+        setPetImage(imageBase64); 
+        setPetData((prevData) => ({ ...prevData, image: imageBase64 }));
       };
   
       reader.readAsDataURL(file); 
@@ -47,7 +47,7 @@ const PetRegistration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!petData.name || !petData.species || !petData.age || !gender || !petData.breed || !petData.weight | !petData.image) {
+    if (!petData.name || !petData.species || !petData.age || !gender || !petData.breed || !petData.weight /*|| !petData.image*/) {
       alert("Por favor, completa todos los campos requeridos.");
       return;
   }

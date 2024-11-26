@@ -1,16 +1,16 @@
-.myappointment-card {
+.myappointment-card1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 120px;
     border: 3px solid #6e7ae6;
-    margin: 16px;
+    margin: 16px 0;
     width: 100%;
-    max-width: 100%; 
-    padding: 16px; 
+    max-width: 800px;
+    overflow: hidden; 
 }
 
-.appointment-pet-image {
+.appointment-pet-image1 {
     width: 150px;
     height: 150px;
     margin: 24px;
@@ -18,12 +18,12 @@
     border-radius: 50%;
 }
 
-.appointment-info {
+.appointment-info1 {
     flex: 1;
     margin-left: 24px;
 }
 
-.appointment-pet{
+.appointment-pet1{
     font-size: 1.5rem;
     font-weight: 700;
     color: #606060;
@@ -36,17 +36,23 @@ p {
     font-weight: bold;
 }
 
-.btn-delete-btn {
+.appoinments-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+.view-btn1{
     background: transparent;
     border: none;
     font-size: 2rem;
-    color: #606060;
+    color: #fff;
     cursor: pointer;
-    transition: color 0.3s ease;
-    align-self: center; 
-    margin-right: 24px; 
-}
-
-.btn-delete-btn:hover {
-    color: #e94e77;
-}
+    position: relative; 
+    left: -40px; 
+  }
+  .right-container1{
+    padding: 80px;
+    transform: translateX(40%);
+    background-color: #6E7AE6;
+  }

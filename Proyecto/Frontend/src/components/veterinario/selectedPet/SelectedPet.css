@@ -1,0 +1,163 @@
+.selected-pet-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+}
+
+.main-box-vet {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+}
+
+.pet-photo-vet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selectedPet-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.pet-iconVet {
+  font-size: 60px;
+  color: #3e64ff;
+  margin-bottom: 10px;
+}
+
+
+.gender-icon {
+  position: absolute;
+  top: -88px;
+  left: 1242px;
+  width: 283px;
+  height: 283px;
+  background-color: #6e7ae6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: #fff;
+}
+
+.info-box-vet {
+  position: absolute;
+  width: 186px;
+  height: 119px;
+  border: 2px solid #6e7ae6;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.species-vet {
+  top: 174px;
+  left: 443px;
+}
+
+.age-vet {
+  top: 174px;
+  left: 704px;
+}
+
+.gender-vet {
+  top: 174px;
+  left: 951px;
+}
+
+.description-box-vet {
+  position: absolute;
+  top: 363px;
+  left: 796px;
+  width: 384px;
+  height: 185px;
+  border: 3px solid #6e7ae6;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.notes-section {
+  position: absolute;
+  top: 566px;
+  left: 114px;
+}
+
+.notes-box {
+  margin-top: 10px;
+  width: 394px;
+  height: 164px;
+  border: 3px solid #6e7ae6;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.treatment-section {
+  position: absolute;
+  top: 589px;
+  left: 605px;
+  text-align: center;
+}
+
+.treatment-box {
+  margin-top: 10px;
+  width: 394px;
+  height: 164px;
+  border: 3px solid #6e7ae6;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.btn-vet {
+  position: absolute;
+  width: 210px;
+  height: 101px;
+  border-radius: 30px;
+  background-color: #6e7ae6;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-vet.assign {
+  top: 867px;
+  left: 532px;
+  width: 300px;
+}
+
+.btn-vet.save {
+  top: 867px;
+  left: 889px;
+}
+
+.btn-vet.add-vaccine {
+  top: 867px;
+  left: 175px;
+  width: 300px;
+}
+
+.close-btnVet-pet {
+  position: fixed;
+  top: 40px;
+  right: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: #6e7ae6;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-btnVet-pet:hover {
+  color: #5563c1;
+  transform: scale(1.2);
+}
