@@ -1,163 +1,184 @@
 .selected-pet-container {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: white;
-}
-
-.main-box-vet {
-  position: relative;
-  width: 1440px;
-  height: 1024px;
-}
-
-.pet-photo-vet {
-  display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.selectedPet-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.pet-iconVet {
-  font-size: 60px;
-  color: #3e64ff;
-  margin-bottom: 10px;
-}
-
-
-.gender-icon {
-  position: absolute;
-  top: -88px;
-  left: 1242px;
-  width: 283px;
-  height: 283px;
-  background-color: #6e7ae6;
-  border-radius: 50%;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 48px;
-  color: #fff;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  font-family: "Quicksand", "Roboto", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.profile-image-container-vet {
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  width: 319px;
+  height: 310px;
+  transform: translateX(60%);
+
+}
+
+.profile-image-vet {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 150px;
+}
+
+.info-grid-vet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  position: absolute;
+  top: 150px; 
+  left: 60%; 
+  transform: translateX(-50%);
 }
 
 .info-box-vet {
-  position: absolute;
   width: 186px;
-  height: 119px;
-  border: 2px solid #6e7ae6;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-}
-
-.species-vet {
-  top: 174px;
-  left: 443px;
-}
-
-.age-vet {
-  top: 174px;
-  left: 704px;
-}
-
-.gender-vet {
-  top: 174px;
-  left: 951px;
-}
-
-.description-box-vet {
-  position: absolute;
-  top: 363px;
-  left: 796px;
-  width: 384px;
-  height: 185px;
+  height: auto;
   border: 3px solid #6e7ae6;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #f9f9f9;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #606060;
+  font-size: 1rem;
+  gap: 8px;
 }
 
-.notes-section {
-  position: absolute;
-  top: 566px;
-  left: 114px;
-}
-
-.notes-box {
-  margin-top: 10px;
-  width: 394px;
-  height: 164px;
-  border: 3px solid #6e7ae6;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-}
-
-.treatment-section {
-  position: absolute;
-  top: 589px;
-  left: 605px;
-  text-align: center;
-}
-
-.treatment-box {
-  margin-top: 10px;
-  width: 394px;
-  height: 164px;
-  border: 3px solid #6e7ae6;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-}
-
-.btn-vet {
-  position: absolute;
-  width: 210px;
-  height: 101px;
-  border-radius: 30px;
-  background-color: #6e7ae6;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-vet.assign {
-  top: 867px;
-  left: 532px;
-  width: 300px;
-}
-
-.btn-vet.save {
-  top: 867px;
-  left: 889px;
-}
-
-.btn-vet.add-vaccine {
-  top: 867px;
-  left: 175px;
-  width: 300px;
-}
-
-.close-btnVet-pet {
-  position: fixed;
-  top: 40px;
-  right: 50px;
-  background-color: transparent;
-  border: none;
-  font-size: 3rem;
+.info-box-vet label {
   color: #6e7ae6;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
-.close-btnVet-pet:hover {
-  color: #5563c1;
-  transform: scale(1.2);
+.title {
+  position: absolute;
+  top: 10px;
+}
+
+.subtitle {
+  color: #6e7ae6;
+  font-size: 1.5rem;
+}
+
+.form-vet {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateX(25%);
+  margin-top: 20%;
+}
+
+.form-group-vet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.form1-group-vet {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notes-box,
+.treatment-box{
+  width: 100%;
+    padding: 8px;
+    border: 3px solid #6E7AE6;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: 'Quicksand', sans-serif;
+    outline: none;
+    color: #606060;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.service-vet{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.button-group-vet {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 10px;
+  width: 1200px;
+  transform: translateX(-35%);
+
+}
+
+.exit-button-vet,
+.save-button-vet,
+.btn-vet-assign,
+.btn-vet-add-vaccine {
+  width: 45%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 30px;
+  gap: 8px;
+}
+
+.exit-button-vet {
+  background-color: #606060;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.exit-button-vet:hover {
+  background-color: #868383;
+}
+
+
+.save-button-vet,
+.btn-vet-assign,
+.btn-vet-add-vaccine {
+  background-color: #6e7ae6;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.save-button-vet:hover,
+.btn-vet-assign:hover,
+.btn-vet-add-vaccine:hover {
+  background-color: #5563c1;
+}
+
+#decoracion-image-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20vw;
+  max-width: 100%;
+  transform: rotate(90deg) scaleY(-1);
+} 
+
+.fas fa-save {
+  right: 2px;
 }
