@@ -9,6 +9,7 @@ import VaccinationCard from "../../components/cliente/vaccinationCard/Vaccinatio
 import HomeVet from "../../pages/veterinario/HomeVet";
 import SelectedPet from "../../components/veterinario/selectedPet/SelectedPet";
 import Appointments from "../../components/veterinario/appointments/Appointments";
+import Login from "../../pages/login/Login";
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
         <Route path="/veterinario" element={<HomeVet />} />
         <Route path="/informacion-mascota/:appointmentId" element={<SelectedPet />} />
         <Route path="/citas-veterinario" element={<Appointments />} />
-
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<HomeClient />} />
         <Route path="/sobre-nosotros" element={<HomeClient />} />
         <Route path="/registrar-mascota" element={<PetRegistration />} />
