@@ -89,11 +89,11 @@ export const SelectedPet = () => {
         <div className="form-group-vet">
           <h1>{appointmentData.pet.name}</h1>
           <div className="service-vet">
-            <h2>Servicio</h2>
+            <h2 className="groupvet">Servicio</h2>
             <h2 className="infosp">
               {appointmentData.service}
             </h2>
-            <h2>Descripción</h2>
+            <h2 className="groupvet">Descripción</h2>
             <h2 className="infosp">
               {appointmentData.description}
             </h2>

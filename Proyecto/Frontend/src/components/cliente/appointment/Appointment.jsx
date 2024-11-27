@@ -36,6 +36,13 @@ const Appointment = () => {
         time: "",
     });
     const timeSlots = generateTimeSlots([7, 0], [17, 30], 30);
+    const getTodayDate = () => {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = (today.getMonth() + 1).toString().padStart(2, "0");
+        const day = today.getDate().toString().padStart(2, "0");
+        return `${year}-${month}-${day}`;
+    };
     useEffect(() => {
         const savedPets = JSON.parse(localStorage.getItem("pets")) || [];
         console.log("Mascota seleccionada:", pet);
@@ -66,6 +73,12 @@ const Appointment = () => {
         const { pet, service, date, time } = appointmentData;
         if (!pet.id || !service || !date || !time) {
             alert("Por favor, completa todos los campos obligatorios.");
+            return;
+        }
+        const selectedDate = new Date(date);
+        const today = new Date();
+        if (selectedDate < today) {
+            alert("La fecha seleccionada ya ha pasado. Por favor, selecciona una fecha futura.");
             return;
         }
         const newAppointment = {
