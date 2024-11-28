@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { FaPaw } from "react-icons/fa";
 import Decoracion from "../../../assets/decoracion.png";
+import editImage from "../../../assets/EditarMascota.jpg";
 import "./SelectedPet.css";
 
 export const SelectedPet = () => {
@@ -83,7 +83,11 @@ export const SelectedPet = () => {
             className="profile-image-vet"
           />
         ) : (
-          <FaPaw className="pet-iconVet" />
+          <img
+            src={editImage}
+            alt={appointmentData.pet.name}
+            className="profile-image-vet"
+          />
         )}
 
         <div className="form-group-vet">
