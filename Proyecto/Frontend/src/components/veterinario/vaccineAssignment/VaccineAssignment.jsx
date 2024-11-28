@@ -4,25 +4,6 @@ import "./VaccineAssignment.css";
 import hamster from "../../../assets/hamster.png";
 import Decoracion from "../../../assets/decoracion.png";
 
-const generateTimeSlots = (start, end, interval) => {
-    const times = [];
-    let current = new Date();
-    current.setHours(...start);
-    const endTime = new Date();
-    endTime.setHours(...end);
-
-    while (current <= endTime) {
-        const hours = current.getHours();
-        const minutes = current.getMinutes();
-        const ampm = hours >= 12 ? "PM" : "AM";
-        const formattedHour =
-            (hours % 12 === 0 ? 12 : hours % 12) + ":" + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
-        times.push(formattedHour);
-        current.setMinutes(current.getMinutes() + interval);
-    }
-    return times;
-};
-
 const VaccineAssignment = () => {
     const navigate = useNavigate();
     const { petId, appointmentId } = useParams();
@@ -33,8 +14,6 @@ const VaccineAssignment = () => {
         vaccine: "",
         date: "",
     });
-
-    const timeSlots = generateTimeSlots([7, 0], [17, 30], 30);
 
     useEffect(() => {
         const savedPets = JSON.parse(localStorage.getItem("pets")) || [];
