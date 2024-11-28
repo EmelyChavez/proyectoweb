@@ -10,6 +10,8 @@ import HomeVet from "../../pages/veterinario/HomeVet";
 import SelectedPet from "../../components/veterinario/selectedPet/SelectedPet";
 import Appointments from "../../components/veterinario/appointments/Appointments";
 import Login from "../../pages/login/Login";
+import AppointmentAssignment from "../../components/veterinario/appointmentAssignment/AppointmentAssignment";
+import VaccineAssignment from "../../components/veterinario/vaccineAssignment/VaccineAssignment";
 
 
 const Home = () => {
@@ -26,7 +28,9 @@ const Home = () => {
         <Route path="/agendar-cita" element={<Appointment />} />
         <Route path="/mis-citas" element={<MyAppointment />} />
         <Route path="/mis-mascotas" element={<MyPet />} />
-        <Route path="/tarjeta-vacunas/:petId" element={<VaccinationCard />} /> 
+        <Route path="/tarjeta-vacunas/:petId" element={<VaccinationCard />} />
+        <Route path="/asignar-cita/:appointmentId" element={<AppointmentAssignment />} />
+        <Route path="/asignar-vacuna/:petId/:appointmentId" element={<VaccineAssignment />} />
       </Routes>
     </Router>
   );

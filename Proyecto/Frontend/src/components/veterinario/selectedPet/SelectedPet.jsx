@@ -168,8 +168,18 @@ export const SelectedPet = () => {
           <button type="submit" className="save-button-vet">
             <i className="fas fa-save"></i> Guardar consulta
           </button>
-          <button type="button" className="btn-vet-assign">Asignar Cita</button>
-          <button type="button" className="btn-vet-add-vaccine">Añadir Vacuna</button>
+          <button
+            type="button"
+            className="btn-vet-assign"
+            onClick={() => navigate(`/asignar-cita/${appointmentData.id}`)}
+          >Asignar Cita
+          </button>
+          <button
+            type="button"
+            className="btn-vet-add-vaccine"
+            onClick={() => navigate(`/asignar-vacuna/${petData.id}/${appointmentData.id}`)}
+          >Añadir Vacuna
+          </button>
         </div>
       </form>
     </div>
