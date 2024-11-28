@@ -1,10 +1,6 @@
-// import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOutAlt, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import "./HomeVet.css";
 
 const HomeVet = () => {
@@ -27,12 +23,12 @@ const HomeVet = () => {
         </button>
 
         <button className="logout-btn">
-          <FontAwesomeIcon icon={faSignOutAlt} />
+          <i className="fas fa-sign-out-alt"></i>
           <span>Logout</span>
         </button>
 
         <div className="avatar">
-          <FontAwesomeIcon icon={faUserAlt} />
+          <i className="fas fa-user-alt"></i>
         </div>
       </div>
     </div>
