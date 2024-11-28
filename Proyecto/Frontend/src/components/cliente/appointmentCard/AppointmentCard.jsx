@@ -1,11 +1,12 @@
 import React from "react";
 import "./AppointmentCard.css";
+import editImage from "../../../assets/EditarMascota.jpg";
 
 const AppointmentCard = ({ appointment, onDelete }) => {
     return (
         <div className="myappointment-card">
             <img
-                src={appointment?.petImage || "https://via.placeholder.com/150"}
+                src={appointment?.petImage || editImage}
                 alt={appointment?.pet || "Mascota"}
                 className="appointment-pet-image"
             />
