@@ -104,6 +104,44 @@ const HomeClient = () => {
                 </section>
                 <img id="decoracion-image-top-right" src={Decoracion} alt="Decoracion" />
             </main>
+            <footer>
+      <div className="footer-container">
+        
+        <img src={logo} alt="Logo de VitalPet" className="footer-logo" />
+
+        
+        <div className="footer-column">
+          <h4>Servicios</h4>
+          <a href="#">Grooming</a>
+          <br />
+          <a href="#">Consultas Médicas</a>
+          <br />
+          <a href="#">Emergencias</a>
+          <br />
+        </div>
+        <div className="footer-column-container">
+          <div className="footer-column">
+            <h4>VitalPet</h4>
+            <p>Centro comercial El Paseo</p>
+            <p>Paseo General Escalón</p>
+            <p>77 Av Sur, San Salvador</p>
+            <p>📞 2273-2189</p>
+          </div>
+        </div>
+        <div className="footer-column footer-socials">
+          <h4>Síguenos</h4>
+          <a href="#">
+            <i className="social-icon fab fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i className="social-icon fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        © 2024 VitalPet.
+      </div>
+    </footer>
         </div>
     );
 };
