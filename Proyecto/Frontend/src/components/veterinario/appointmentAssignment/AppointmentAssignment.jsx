@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./AppointmentAssignment.css";
 import hamster from "../../../assets/hamster.png";
 import Decoracion from "../../../assets/decoracion.png";
+import SuccessModal from "../../../modals/SuccessModal/SuccessModal"; 
+import ErrorModal from "../../../modals/ErrorModal/ErrorModal"; 
 
 const generateTimeSlots = (start, end, interval) => {
     const times = [];
@@ -27,6 +29,8 @@ const AppointmentAssignment = () => {
     const navigate = useNavigate();
     const { appointmentId } = useParams();
     const [pets, setPets] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false); 
+    const [isErrorModalOpen, setIsErrorModalOpen] = useState(false); // Para el modal de error
     const [appointments, setAppointments] = useState([]);
     const [appointmentData, setAppointmentData] = useState({
         pet: { id: "", name: "" },
@@ -77,7 +81,7 @@ const AppointmentAssignment = () => {
 
         const { pet, service, date, time } = appointmentData;
         if (!pet.id || !service || !date || !time) {
-            alert("Por favor, completa todos los campos obligatorios.");
+            setIsErrorModalOpen(true); 
             return;
         }
 
@@ -86,11 +90,17 @@ const AppointmentAssignment = () => {
             a.id === appointmentId ? { ...appointmentData } : a
         );
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+        setIsModalOpen(true);
 
-        alert("Cita actualizada correctamente.");
-        navigate("/citas-veterinario");
     }
 
+    const handleModalClose = () => {
+        setIsModalOpen(false); 
+        navigate("/citas-veterinario");
+    };
+    const handleErrorModalClose = () => {
+        setIsErrorModalOpen(false); 
+    };
     return (
         <div className="appointment-container">
             <h1>Editar Cita Médica</h1>
@@ -163,6 +173,8 @@ const AppointmentAssignment = () => {
                 <img src={hamster} alt="Hamster" className="hamster-img" />
             </div>
             <img id="decoracion-image-bottom-left" src={Decoracion} alt="Decoracion" />
+            <SuccessModal isOpen={isModalOpen} onClose={handleModalClose} />
+            <ErrorModal isOpen={isErrorModalOpen} onClose={handleErrorModalClose} />
             <button
                 className="close-button"
                 onClick={() => navigate(`/informacion-mascota/${appointmentData.id}`)}

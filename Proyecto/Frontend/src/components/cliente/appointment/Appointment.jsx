@@ -4,6 +4,8 @@ import "./Appointment.css";
 import hamster from "../../../assets/hamster.png";
 import Decoracion from "../../../assets/decoracion.png";
 import SuccessModal from "../../../modals/SuccessModal/SuccessModal"; 
+import ErrorModal from "../../../modals/ErrorModal/ErrorModal"; 
+import PastDateModal from "../../../modals/PastDateModal/PastDateModal"; // Importa el modal
 
 const generateTimeSlots = (start, end, interval) => {
     const times = [];
@@ -36,6 +38,8 @@ const Appointment = () => {
         time: "",
     });
     const [isModalOpen, setIsModalOpen] = useState(false); 
+    const [isErrorModalOpen, setIsErrorModalOpen] = useState(false); 
+    const [isPastDateModalOpen, setIsPastDateModalOpen] = useState(false); // Estado para el modal de fecha pasada
     const timeSlots = generateTimeSlots([7, 0], [17, 30], 30);
 
     useEffect(() => {
@@ -64,13 +68,13 @@ const Appointment = () => {
         e.preventDefault();
         const { pet, service, date, time } = appointmentData;
         if (!pet.id || !service || !date || !time) {
-            alert("Por favor, completa todos los campos obligatorios.");
+            setIsErrorModalOpen(true); 
             return;
         }
         const selectedDate = new Date(date);
         const today = new Date();
         if (selectedDate < today) {
-            alert("La fecha seleccionada ya ha pasado. Por favor, selecciona una fecha futura.");
+            setIsPastDateModalOpen(true);
             return;
         }
 
@@ -88,6 +92,14 @@ const Appointment = () => {
     const handleModalClose = () => {
         setIsModalOpen(false); 
         navigate("/mis-citas"); 
+    };
+
+    const handleErrorModalClose = () => {
+        setIsErrorModalOpen(false); 
+    };
+
+    const handlePastDateModalClose = () => {
+        setIsPastDateModalOpen(false);
     };
 
     return (
@@ -141,8 +153,10 @@ const Appointment = () => {
             </div>
             <img id="decoracion-image-bottom-left" src={Decoracion} alt="Decoracion" />
             
+            {/* Modales */}
             <SuccessModal isOpen={isModalOpen} onClose={handleModalClose} />
-
+            <ErrorModal isOpen={isErrorModalOpen} onClose={handleErrorModalClose} />
+            <PastDateModal isOpen={isPastDateModalOpen} onClose={handlePastDateModalClose} />
             <button className="close-button" onClick={() => navigate("/sobre-nosotros")}>
                 <i className="fas fa-times"></i> 
             </button>

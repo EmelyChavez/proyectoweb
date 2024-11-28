@@ -3,11 +3,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./VaccineAssignment.css";
 import hamster from "../../../assets/hamster.png";
 import Decoracion from "../../../assets/decoracion.png";
+import SuccessModal from "../../../modals/SuccessModal/SuccessModal"; 
+import ErrorModal from "../../../modals/ErrorModal/ErrorModal"; 
 
 const VaccineAssignment = () => {
     const navigate = useNavigate();
     const { petId, appointmentId } = useParams();
     const [petData, setPetData] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false); 
+    const [isErrorModalOpen, setIsErrorModalOpen] = useState(false); 
     const [vaccineData, setVaccineData] = useState({
         petId: "",
         petName: "",
@@ -43,7 +47,7 @@ const VaccineAssignment = () => {
 
         const { petId, vaccine, date } = vaccineData;
         if (!petId || !vaccine || !date) {
-            alert("Por favor, completa todos los campos obligatorios.");
+            setIsErrorModalOpen(true); 
             return;
         }
 
@@ -54,11 +58,17 @@ const VaccineAssignment = () => {
 
         const savedVaccines = JSON.parse(localStorage.getItem("vaccines")) || [];
         localStorage.setItem("vaccines", JSON.stringify([...savedVaccines, newVaccineRecord]));
-
+        setIsModalOpen(true);
         console.log(newVaccineRecord);
-        alert("Vacuna asignada correctamente.");
+
+    }
+    const handleModalClose = () => {
+        setIsModalOpen(false);
         navigate(`/informacion-mascota/${appointmentId}`);
     }
+    const handleErrorModalClose = () => {
+        setIsErrorModalOpen(false); 
+    };
 
     if (!petData) {
         return <h2>No se encontró información de esta mascota.</h2>;
@@ -91,6 +101,8 @@ const VaccineAssignment = () => {
                 <img src={hamster} alt="Hamster" className="hamster-img" />
             </div>
             <img id="decoracion-image-bottom-left" src={Decoracion} alt="Decoracion" />
+            <SuccessModal isOpen={isModalOpen} onClose={handleModalClose} />
+            <ErrorModal isOpen={isErrorModalOpen} onClose={handleErrorModalClose} />
             <button className="close-button" onClick={() => navigate(`/informacion-mascota/${appointmentId}`)}>
                 <i className="fas fa-times"></i>
             </button>

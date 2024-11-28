@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import Decoracion from "../../../assets/decoracion.png";
 import editImage from "../../../assets/EditarMascota.jpg";
 import "./SelectedPet.css";
+import SuccessModal from "../../../modals/SuccessModal/SuccessModal"; 
+import ErrorModal from "../../../modals/ErrorModal/ErrorModal"; // Importa el modal de error
 
 export const SelectedPet = () => {
   const navigate = useNavigate();
@@ -10,7 +12,8 @@ export const SelectedPet = () => {
 
   const [petData, setPetData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
-
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
   const [medicalRecords, setMedicalRecords] = useState([]);
   const [medicalRecordData, setMedicalRecordData] = useState({
     notes: "",
@@ -50,7 +53,7 @@ export const SelectedPet = () => {
 
     const { notes, treatment } = medicalRecordData;
     if (!notes || !treatment) {
-      alert("Por favor, completa todos los campos obligatorios.");
+      setIsErrorModalOpen(true); 
       return;
     }
     const newMedicalRecord = {
@@ -62,10 +65,17 @@ export const SelectedPet = () => {
     localStorage.setItem("medicalRecords", JSON.stringify([...savedMedicalRecords, newMedicalRecord]));
 
     console.log(newMedicalRecord);
-    alert("Historial agregado correctamente.");
-    navigate("/citas-veterinario");
+    setIsModalOpen(true);
+
   }
 
+  const handleModalClose = () => {
+    setIsModalOpen(false); 
+    navigate("/citas-veterinario");
+};
+const handleErrorModalClose = () => {
+  setIsErrorModalOpen(false); 
+};  
   if (!appointmentData) {
     return <h2>No se encontró información de esta mascota.</h2>;
   }
@@ -186,6 +196,10 @@ export const SelectedPet = () => {
           </button>
         </div>
       </form>
+      <SuccessModal isOpen={isModalOpen} onClose={handleModalClose} />
+      <ErrorModal isOpen={isErrorModalOpen} onClose={handleErrorModalClose} />
+
+
     </div>
   );
 };

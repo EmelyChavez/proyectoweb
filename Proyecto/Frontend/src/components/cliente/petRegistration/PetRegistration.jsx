@@ -3,11 +3,15 @@ import "./PetRegistration.css";
 import { useNavigate } from "react-router-dom";
 import editImage from "../../../assets/EditarMascota.jpg";
 import Decoracion from "../../../assets/decoracion.png";
+import SuccessModal from "../../../modals/SuccessModal/SuccessModal";
+import ErrorModal from "../../../modals/ErrorModal/ErrorModal";
 
 const PetRegistration = () => {
   const navigate = useNavigate();
   const [gender, setGender] = React.useState("");
   const [petImage, setPetImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
   const [petData, setPetData] = useState({
     name: "",
@@ -36,11 +40,11 @@ const PetRegistration = () => {
 
       reader.onload = () => {
         const imageBase64 = reader.result;
-        setPetImage(imageBase64); 
+        setPetImage(imageBase64);
         setPetData((prevData) => ({ ...prevData, image: imageBase64 }));
       };
-  
-      reader.readAsDataURL(file); 
+
+      reader.readAsDataURL(file);
     }
   };
 
@@ -48,9 +52,9 @@ const PetRegistration = () => {
     e.preventDefault();
 
     if (!petData.name || !petData.species || !petData.age || !gender || !petData.breed || !petData.weight /*|| !petData.image*/) {
-      alert("Por favor, completa todos los campos requeridos.");
+      setIsErrorModalOpen(true);
       return;
-  }
+    }
 
     const newPet = {
       ...petData,
@@ -62,10 +66,17 @@ const PetRegistration = () => {
     localStorage.setItem("pets", JSON.stringify([...pets, newPet]));
     setIsModalOpen(true);
 
-    navigate("/mis-mascotas");
   };
 
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    navigate("/mis-mascotas");
 
+  };
+
+  const handleErrorModalClose = () => {
+    setIsErrorModalOpen(false);
+  };
   return (
     <div className="pet-registration-container">
       <h1 className="title">Registrar Perfil De Mascota</h1>
@@ -89,20 +100,20 @@ const PetRegistration = () => {
 
         <div className="form-group">
           <label htmlFor="nombre">Nombre</label>
-          <input id="name" type="text" onChange={handleInputChange}/>
+          <input id="name" type="text" onChange={handleInputChange} />
         </div>
       </div>
 
       <div className="info-grid">
         <div className="info-box">
           <label htmlFor="species">Especie</label>
-          <input id="species" type="text" onChange={handleInputChange}/>
+          <input id="species" type="text" onChange={handleInputChange} />
         </div>
 
         <div className="info-box">
           <label htmlFor="edad">Edad</label>
           <div className="age-container">
-            <input id="age" placeholder="0" type="number" min="0" onChange={handleInputChange}/>
+            <input id="age" placeholder="0" type="number" min="0" onChange={handleInputChange} />
             <select id="ageUnit" onChange={handleInputChange} className="age-unit">
               <option value="años">Años</option>
               <option value="meses">Meses</option>
@@ -141,12 +152,12 @@ const PetRegistration = () => {
         <h2 className="subtitle">Información Adicional</h2>
         <div className="form-group">
           <label htmlFor="breed">Raza</label>
-          <input id="breed" type="text" onChange={handleInputChange}/>
+          <input id="breed" type="text" onChange={handleInputChange} />
         </div>
 
         <div className="form-group">
           <label htmlFor="weight">Peso (kg)</label>
-          <input id="weight" type="number" placeholder="0" min={0} step="0.1" onChange={handleInputChange}/>
+          <input id="weight" type="number" placeholder="0" min={0} step="0.1" onChange={handleInputChange} />
         </div>
 
         <div className="button-group">
@@ -158,6 +169,8 @@ const PetRegistration = () => {
           </button>
         </div>
       </form>
+      <SuccessModal isOpen={isModalOpen} onClose={handleModalClose} />
+      <ErrorModal isOpen={isErrorModalOpen} onClose={handleErrorModalClose} />
     </div>
   );
 };
