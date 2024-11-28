@@ -7,7 +7,7 @@
     margin: 16px 0;
     width: 100%;
     max-width: 800px;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .appointment-pet-image1 {
@@ -23,7 +23,7 @@
     margin-left: 24px;
 }
 
-.appointment-pet1{
+.appointment-pet1 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #606060;
@@ -40,19 +40,71 @@ p {
     display: flex;
     align-items: center;
     gap: 16px;
-  }
+}
 
-.view-btn1{
+.view-btn1 {
     background: transparent;
     border: none;
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
-    position: relative; 
-    left: -40px; 
-  }
-  .right-container1{
+    position: relative;
+    left: -40px;
+}
+
+.history-btn {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #606060;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.history-btn:hover{
+    color: #6E7AE6;
+}
+
+.right-container1 {
     padding: 80px;
     transform: translateX(40%);
     background-color: #6E7AE6;
-  }
+}
+.checkbox-label {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.round-checkbox {
+    display: none; 
+}
+
+.custom-checkbox {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #606060;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 30px;
+}
+
+.round-checkbox:checked + .custom-checkbox {
+    background-color: #6e7ae6; 
+    border-color: #6e7ae6;
+}
+
+.round-checkbox:checked + .custom-checkbox::before {
+    content: "\f00c"; 
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    color: white;
+    font-size: 16px;
+    position: absolute;
+}

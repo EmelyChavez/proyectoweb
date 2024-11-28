@@ -10,15 +10,14 @@
   position: relative;
   overflow: hidden;
 }
-.infosp{
+.infosp, .groupvet{
+  text-align: center;
+  margin: 0;
+}
+.datasp, #notes, #treatment, .infosp{
   color: #606060;
 }
-.datasp{
-  color: #606060;
-}
-#notes, #treatment{
-  color: #606060;
-}
+
 .profile-image-container-vet {
   position: absolute;
   top: 120px;
@@ -95,10 +94,7 @@
   align-items: center;
   gap: 10px;
 }
-h2{
-  margin: 0;
-  text-align: center;
-}
+
 .form1-group-vet {
   display: flex;
   flex-direction: column;

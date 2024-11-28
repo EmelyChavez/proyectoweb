@@ -80,7 +80,7 @@ const HomeClient = () => {
                         <img src={servicio1} alt="Grooming" className="servicio-imagen" />
                         <div className="servicio-info">
                             <h3>Grooming</h3>
-                            <p>Cuidado especializado para tu mascota con cortes, baño y mucho más.</p>
+                            <p>En VitalPet, cuidamos la apariencia y el confort de tu mascota con servicios de grooming profesionales y personalizados.</p>
                         </div>
                     </div>
                     <div className="servicio-card">
@@ -91,14 +91,14 @@ const HomeClient = () => {
                         />
                         <div className="servicio-info">
                             <h3>Consultas Médicas</h3>
-                            <p>Atención veterinaria completa para el bienestar de tu mascota.</p>
+                            <p>Tu mascota merece lo mejor. En VitalPet ofrecemos atención médica integral para su salud y bienestar.</p>
                         </div>
                     </div>
                     <div className="servicio-card">
                         <img src={servicio3} alt="Emergencias" className="servicio-imagen" />
                         <div className="servicio-info">
                             <h3>Emergencias</h3>
-                            <p>Estamos disponibles para ayudarte en cualquier situación crítica.</p>
+                            <p>VitalPet, tu veterinaria de confianza. Brindamos cuidado completo con servicios de grooming, atención médica y emergencias.</p>
                         </div>
                     </div>
                 </section>
