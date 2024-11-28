@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Appointment.css";
 import hamster from "../../../assets/hamster.png";
 import Decoracion from "../../../assets/decoracion.png";
+import SuccessModal from "../../../modals/SuccessModal/SuccessModal"; 
 
 const generateTimeSlots = (start, end, interval) => {
     const times = [];
@@ -26,7 +27,6 @@ const generateTimeSlots = (start, end, interval) => {
 const Appointment = () => {
     const navigate = useNavigate();
     const [pets, setPets] = useState([]);
-    const [appointments, setAppointments] = useState([]);
     const [appointmentData, setAppointmentData] = useState({
         pet: { id: "", name: "" },
         service: "",
@@ -35,17 +35,11 @@ const Appointment = () => {
         date: "",
         time: "",
     });
+    const [isModalOpen, setIsModalOpen] = useState(false); 
     const timeSlots = generateTimeSlots([7, 0], [17, 30], 30);
-    const getTodayDate = () => {
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = (today.getMonth() + 1).toString().padStart(2, "0");
-        const day = today.getDate().toString().padStart(2, "0");
-        return `${year}-${month}-${day}`;
-    };
+
     useEffect(() => {
         const savedPets = JSON.parse(localStorage.getItem("pets")) || [];
-        console.log("Mascota seleccionada:", pet);
         setPets(savedPets);
     }, []);
 
@@ -66,10 +60,8 @@ const Appointment = () => {
         }
     };
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const { pet, service, date, time } = appointmentData;
         if (!pet.id || !service || !date || !time) {
             alert("Por favor, completa todos los campos obligatorios.");
@@ -81,6 +73,7 @@ const Appointment = () => {
             alert("La fecha seleccionada ya ha pasado. Por favor, selecciona una fecha futura.");
             return;
         }
+
         const newAppointment = {
             ...appointmentData,
             id: crypto.randomUUID(),
@@ -89,10 +82,13 @@ const Appointment = () => {
         const savedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
         localStorage.setItem("appointments", JSON.stringify([...savedAppointments, newAppointment]));
 
-        console.log(newAppointment);
-        alert("Cita agendada correctamente.");
-        navigate("/mis-citas");
-    }
+        setIsModalOpen(true);
+    };
+
+    const handleModalClose = () => {
+        setIsModalOpen(false); 
+        navigate("/mis-citas"); 
+    };
 
     return (
         <div className="appointment-container">
@@ -115,7 +111,6 @@ const Appointment = () => {
                         <option value="grooming">Grooming</option>
                         <option value="consulta">Consulta Médica</option>
                         <option value="emergencias">Emergencias</option>
-
                     </select>
 
                     <label htmlFor="description">Descripción</label>
@@ -145,9 +140,11 @@ const Appointment = () => {
                 <img src={hamster} alt="Hamster" className="hamster-img" />
             </div>
             <img id="decoracion-image-bottom-left" src={Decoracion} alt="Decoracion" />
-            { }
+            
+            <SuccessModal isOpen={isModalOpen} onClose={handleModalClose} />
+
             <button className="close-button" onClick={() => navigate("/sobre-nosotros")}>
-                <i className="fas fa-times"></i> { }
+                <i className="fas fa-times"></i> 
             </button>
         </div>
     );

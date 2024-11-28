@@ -60,6 +60,7 @@ const PetRegistration = () => {
 
     const pets = JSON.parse(localStorage.getItem("pets")) || [];
     localStorage.setItem("pets", JSON.stringify([...pets, newPet]));
+    setIsModalOpen(true);
 
     navigate("/mis-mascotas");
   };

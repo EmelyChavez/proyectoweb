@@ -1,25 +1,35 @@
 import React, { useState } from "react";
+import editImage from "../../../assets/EditarMascota.jpg";
+import ConfirmationModal from "../../../modals/ConfirmationModal/ConfirmationModal";
 import "./AppointmentsCard.css";
 
 const AppointmentsCard = ({ appointment, onSelectedPet }) => {
-    const [isChecked, setIsChecked] = useState(false); // Estado para manejar el check
+    const [isChecked, setIsChecked] = useState(false); 
+    const [isModalOpen, setIsModalOpen] = useState(false); 
 
-    const handleCheck = () => {
-        setIsChecked(!isChecked); // Alterna entre marcado/no marcado
-        if (!isChecked) {
-            // Eliminar cita del localStorage
-            const savedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
-            const updatedAppointments = savedAppointments.filter((appt) => appt.id !== appointment.id);
+    const handleCheckboxChange = () => {
+        setIsModalOpen(true); 
+    };
 
-            localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
-            console.log(`Cita con ID ${appointment.id} eliminada del localStorage`);
-        }
+    const handleConfirm = () => {
+        setIsChecked(true); 
+        setIsModalOpen(false);
+
+        const savedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
+        const updatedAppointments = savedAppointments.filter((appt) => appt.id !== appointment.id);
+
+        localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+        console.log(`Cita con ID ${appointment.id} eliminada del localStorage`);
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false); 
     };
 
     return (
         <div className="myappointment-card1">
             <img
-                src={appointment?.petImage || "https://via.placeholder.com/150"}
+                src={appointment?.petImage || editImage}
                 alt={appointment?.pet || "Mascota"}
                 className="appointment-pet-image1"
             />
@@ -39,20 +49,23 @@ const AppointmentsCard = ({ appointment, onSelectedPet }) => {
                             type="checkbox"
                             className="round-checkbox"
                             checked={isChecked}
-                            onChange={handleCheck} // Cambia el estado y elimina del localStorage
+                            onChange={handleCheckboxChange} 
                         />
-                        <span className="custom-checkbox">
-                        </span>
+                        <span className="custom-checkbox"></span>
                     </label>
                 </div>
-
             </div>
+            
+            <ConfirmationModal
+                isOpen={isModalOpen}
+                onClose={handleCancel}
+                onConfirm={handleConfirm}
+            />
             <div className="right-container1">
                 <button className="btn view-btn1" onClick={() => onSelectedPet(appointment.id)}>
                     <i className="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
-
         </div>
     );
 };
