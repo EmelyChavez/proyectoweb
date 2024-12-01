@@ -19,9 +19,10 @@
 }
 
 .details-wrapper {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
+  display: grid;
+  grid-template-areas: 
+    "details details details"
+    "header header header";
   gap: 20px;
   width: 100%;
   max-width: 1600px;
@@ -29,15 +30,133 @@
   box-sizing: border-box;
 }
 
+.details-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  grid-area: details; 
+  margin-left: 100px;
+  margin-top: 20px; 
+}
+
+.detail {
+  border: 3px solid #6e7ae6;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px; 
+  width: 180px; 
+}
+
+.male-icon, .female-icon {
+  font-size: 1.8rem;
+}
+
+.male-icon {
+  color: #19486D;
+}
+
+.female-icon {
+  color: #D86DC1;
+}
+
+.breed {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  color: #606060;
+}
+
+.vaccination-info {
+  margin-left: 60px;
+  margin-top: 20px;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.vaccine-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 40px;
+  margin-top: 20px; /* Espaciado hacia abajo */
+  border: 3px solid #6e7ae6;
+  border-radius: 20px;
+  background: #f5f8ff;
+  grid-area: header; /* Define su posición en el grid */
+}
+
+.vaccine-header h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #9e9e9e; 
+}
+
+.vaccination-list {
+  max-height: 300px; 
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  padding-right: 10px; 
+}
+
+.vaccine-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: none; 
+  border: none; 
+  font-size: 1.2rem;
+  color: #606060; 
+}
+
+.vaccine-item:nth-child(even) {
+  background: #f5faff;
+}
+
+.vaccination-list::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.vaccination-list::-webkit-scrollbar-thumb {
+  background-color: #6e7ae6;
+  border-radius: 10px;
+}
+
+.vaccination-list::-webkit-scrollbar-track {
+  background: #f5faff;
+}
+
+.close-button {
+  position: fixed;
+  top: 40px;
+  right: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: #6e7ae6;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #5563c1;
+  transform: scale(1.2);
+}
+
+
 .pet-details {
   padding: 30px;
   border-radius: 15px;
   text-align: center;
   margin-bottom: 20px;
   flex: 1.5;
-  height: 100%;
-  position: relative; 
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
 }
+
 
 .pet-photo {
   display: flex;
@@ -69,75 +188,6 @@ h2 {
   font-size: 1.3rem;
   font-weight: bold;
   color: #606060;
-}
-
-
-.details-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  position: absolute;
-  top: 150px; 
-  left: 69%; 
-  transform: translateX(-50%);
-}
-
-.detail {
-  border: 3px solid #6e7ae6;
-  border-radius: 20px;
-  text-align: center;
-  padding: 20px; 
-  width: 180px; 
-}
-.male-icon, .female-icon{
-  font-size: 1.8rem;
-}
-.male-icon {
-  color: #19486D;
-}
-
-.female-icon {
-  color: #D86DC1;
-}
-
-
-.breed {
-  font-size: 1.5rem;
-  margin-top: 50px;
-  color: #606060;
-}
-
-.vaccination-info {
-  margin-top: 20px;
-  flex: 2;
-}
-
-.vaccine-item {
-  display: flex;
-  box-sizing: border-box;
-  justify-content: space-between;
-  padding:0px 40px 0px 40px;
-  margin: 5px 0;
-  border: 3px solid #6e7ae6;
-  border-radius: 20px;
-  background: #f5f8ff;
-}
-
-.close-button {
-  position: fixed;
-  top: 40px;
-  right: 50px;
-  background-color: transparent;
-  border: none;
-  font-size: 3rem;
-  color: #6e7ae6;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.close-button:hover {
-  color: #5563c1;
-  transform: scale(1.2);
 }
 
 #decoracion-image-left {

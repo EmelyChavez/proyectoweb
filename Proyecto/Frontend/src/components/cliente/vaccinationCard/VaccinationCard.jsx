@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { FaPaw } from "react-icons/fa";
 import Decoracion from "../../../assets/decoracion.png";
+import editImage from "../../../assets/EditarMascota.jpg";
 import "./VaccinationCard.css";
 
 const VaccinationCard = () => {
@@ -36,7 +36,11 @@ const VaccinationCard = () => {
                 className=" vaccination-image"
               />
             ) : (
-              <FaPaw className="pet-icon" />
+              <img
+                src={editImage}
+                alt={petData.name}
+                className="vaccination-image"
+              />
             )}
             <h1>{petData.name}</h1>
           </div>
@@ -45,7 +49,7 @@ const VaccinationCard = () => {
             <strong>Raza:</strong> {petData.breed} <br />
             <strong>Peso (kg):</strong> {petData.weight}
           </h3>
-          
+
         </div>
 
         <div className="vaccination-info">
@@ -72,23 +76,28 @@ const VaccinationCard = () => {
 
           </div>
 
-          <div className="vaccine-item">
-            <h2>Vacuna</h2>
-            <h2>Fecha</h2>
+          <div className="vaccination-info">
+            {/* Encabezado con bordes */}
+            <div className="vaccine-header">
+              <h2>Vacuna</h2>
+              <h2>Fecha</h2>
+            </div>
+
+            {/* Lista de vacunas con scroll */}
+            <div className="vaccination-list">
+              {petData.vaccines?.length > 0 ? (
+                petData.vaccines.map((vaccine, index) => (
+                  <div className="vaccine-item" key={index}>
+                    <span className="data">{vaccine.name}</span>
+                    <span className="data">{vaccine.date}</span>
+                  </div>
+                ))
+              ) : (
+                <h2 className="data">No hay vacunas registradas.</h2>
+              )}
+            </div>
           </div>
 
-          <div className="vaccination-list">
-            {petData.vaccines?.length > 0 ? (
-              petData.vaccines.map((vaccine, index) => (
-                <div className="vaccine-item" key={index}>
-                  <h2 className="data">{vaccine.name}</h2>
-                  <h2 className="data">{vaccine.date}</h2>
-                </div>
-              ))
-            ) : (
-              <h2 className="data">No hay vacunas registradas.</h2>
-            )}
-          </div>
 
         </div>
 

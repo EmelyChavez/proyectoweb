@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Decoracion from "../../../assets/decoracion.png";
 import editImage from "../../../assets/EditarMascota.jpg";
 import "./SelectedPet.css";
-import SuccessModal from "../../../modals/SuccessModal/SuccessModal"; 
+import SuccessModal from "../../../modals/SuccessModal/SuccessModal";
 import ErrorModal from "../../../modals/ErrorModal/ErrorModal"; // Importa el modal de error
 
 export const SelectedPet = () => {
@@ -12,7 +12,7 @@ export const SelectedPet = () => {
 
   const [petData, setPetData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
   const [medicalRecords, setMedicalRecords] = useState([]);
   const [medicalRecordData, setMedicalRecordData] = useState({
@@ -53,7 +53,7 @@ export const SelectedPet = () => {
 
     const { notes, treatment } = medicalRecordData;
     if (!notes || !treatment) {
-      setIsErrorModalOpen(true); 
+      setIsErrorModalOpen(true);
       return;
     }
     const newMedicalRecord = {
@@ -70,12 +70,12 @@ export const SelectedPet = () => {
   }
 
   const handleModalClose = () => {
-    setIsModalOpen(false); 
+    setIsModalOpen(false);
     navigate("/citas-veterinario");
-};
-const handleErrorModalClose = () => {
-  setIsErrorModalOpen(false); 
-};  
+  };
+  const handleErrorModalClose = () => {
+    setIsErrorModalOpen(false);
+  };
   if (!appointmentData) {
     return <h2>No se encontró información de esta mascota.</h2>;
   }
@@ -86,6 +86,7 @@ const handleErrorModalClose = () => {
       <img id="decoracion-image-top-right" src={Decoracion} alt="Decoracion" />
 
       <div className="profile-image-container-vet">
+        <div className="pet-photo">
         {appointmentData.petImage ? (
           <img
             src={appointmentData.petImage}
@@ -99,6 +100,7 @@ const handleErrorModalClose = () => {
             className="profile-image-vet"
           />
         )}
+        </div>
 
         <div className="form-group-vet">
           <h1>{appointmentData.pet.name}</h1>
@@ -118,37 +120,39 @@ const handleErrorModalClose = () => {
 
       </div >
 
-      <div className="info-grid-vet">
-        <div className="info-box-vet">
-          <label >Especie</label>
-          <label className="datasp">{petData.species}</label>
-        </div>
+      <div className="info-complete-info">
+        <div className="info-grid-vet">
+          <div className="info-box-vet">
+            <label >Especie</label>
+            <label className="datasp">{petData.species}</label>
+          </div>
 
-        <div className="info-box-vet">
-          <label>Edad</label>
-          <label className="datasp">{petData.age}</label>
-        </div>
+          <div className="info-box-vet">
+            <label>Edad</label>
+            <label className="datasp">{petData.age}</label>
+          </div>
 
-        <div className="info-box-vet">
-          <label>Género</label>
-          <div className="datasp">
-            {petData.gender === 'male' ? (
-              <i className="fas fa-mars male-icon"></i>
-            ) : petData.gender === 'female' ? (
-              <i className="fas fa-venus female-icon"></i>
-            ) : null}
+          <div className="info-box-vet">
+            <label>Género</label>
+            <div className="datasp">
+              {petData.gender === 'male' ? (
+                <i className="fas fa-mars male-icon"></i>
+              ) : petData.gender === 'female' ? (
+                <i className="fas fa-venus female-icon"></i>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="raza-peso-box">
-        <div className="info-box-vet">
-          <label>Raza</label>
-          <label className="datasp">{petData.breed}</label>
-        </div>
+        <div className="raza-peso-box">
+          <div className="info-box-vet">
+            <label>Raza</label>
+            <label className="datasp">{petData.breed}</label>
+          </div>
 
-        <div className="info-box-vet">
-          <label>Peso (kg)</label>
-          <label className="datasp">{petData.weight}</label>
+          <div className="info-box-vet">
+            <label>Peso (kg)</label>
+            <label className="datasp">{petData.weight}</label>
+          </div>
         </div>
       </div>
       <form action="" className="form-vet" onSubmit={handleSubmit}>

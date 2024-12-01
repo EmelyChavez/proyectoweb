@@ -44,24 +44,34 @@ const VaccineAssignment = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+    
         const { petId, vaccine, date } = vaccineData;
         if (!petId || !vaccine || !date) {
             setIsErrorModalOpen(true); 
             return;
         }
-
+    
         const newVaccineRecord = {
-            ...vaccineData,
             id: crypto.randomUUID(),
+            name: vaccine,
+            date,
         };
-
-        const savedVaccines = JSON.parse(localStorage.getItem("vaccines")) || [];
-        localStorage.setItem("vaccines", JSON.stringify([...savedVaccines, newVaccineRecord]));
+    
+        const savedPets = JSON.parse(localStorage.getItem("pets")) || [];
+        const updatedPets = savedPets.map((pet) => {
+            if (pet.id === petId) {
+                return {
+                    ...pet,
+                    vaccines: [...(pet.vaccines || []), newVaccineRecord],
+                };
+            }
+            return pet;
+        });
+        localStorage.setItem("pets", JSON.stringify(updatedPets));
+    
         setIsModalOpen(true);
-        console.log(newVaccineRecord);
-
-    }
+    };
+    
     const handleModalClose = () => {
         setIsModalOpen(false);
         navigate(`/informacion-mascota/${appointmentId}`);
