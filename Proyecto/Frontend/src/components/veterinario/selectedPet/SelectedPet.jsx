@@ -18,7 +18,6 @@ export const SelectedPet = () => {
   const [medicalRecordData, setMedicalRecordData] = useState({
     notes: "",
     treatment: "",
-    idAppointment: "",
   });
   useEffect(() => {
     const savedPets = JSON.parse(localStorage.getItem("pets")) || [];
@@ -34,7 +33,6 @@ export const SelectedPet = () => {
 
       setMedicalRecordData((prevData) => ({
         ...prevData,
-        idAppointment: appointmentId,
       }));
     }
 
@@ -59,6 +57,11 @@ export const SelectedPet = () => {
     const newMedicalRecord = {
       ...medicalRecordData,
       id: crypto.randomUUID(),
+      petId: appointmentData.pet.id,
+      service: appointmentData.service,
+      description: appointmentData.description,
+      date: appointmentData.date,
+      time: appointmentData.time,
     };
 
     const savedMedicalRecords = JSON.parse(localStorage.getItem("medicalRecords")) || [];

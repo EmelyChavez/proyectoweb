@@ -1,0 +1,170 @@
+.recordCard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    font-family: "Quicksand", "Roboto", sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .infospRC, .grouprecord{
+    text-align: center;
+    margin: 0;
+  }
+  .dataRC, #notes, #treatment, .infospRC{
+    color: #606060;
+  }
+  
+  .image-record-card {
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    width: 319px;
+    height: 310px;
+    transform: translateX(60%);
+  
+  }
+  
+  .profile-image-record {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 150px;
+  }
+  
+  .info-grid-record {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    position: absolute;
+    top: 150px; 
+    left: 60%; 
+    transform: translateX(-50%);
+  }
+  
+  .info-box-record {
+    width: 186px;
+    height: auto;
+    border: 3px solid #6e7ae6;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #606060;
+    font-size: 1rem;
+    gap: 8px;
+  }
+  .raza-peso-box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    position: absolute;
+    top: 270px; 
+    left: 60%; 
+    transform: translateX(-50%);
+  }
+  .info-box-record label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .title {
+    position: absolute;
+    top: 10px;
+  }
+  .form-record {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateX(25%);
+    margin-top: 20%;
+  }
+  
+  .form-group-record {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form1-group-record {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .notes-box,
+  .treatment-box{
+    width: 100%;
+      padding: 8px;
+      border: 3px solid #6E7AE6;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: 'Quicksand', sans-serif;
+      outline: none;
+      color: #606060;
+      font-weight: 600;
+      box-sizing: border-box;
+  }
+  
+  .service-record{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .button-group-record {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    gap: 10px;
+    width: 1200px;
+    transform: translateX(5%);
+  
+  }
+  
+  .exit-button-record {
+    width: 45%;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 30px;
+    gap: 8px;
+  }
+  
+  .exit-button-record {
+    background-color: #606060;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .exit-button-record:hover {
+    background-color: #868383;
+  }
+  
+  #decoracion-image-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20vw;
+    max-width: 100%;
+    transform: rotate(90deg) scaleY(-1);
+  } 
+
+  

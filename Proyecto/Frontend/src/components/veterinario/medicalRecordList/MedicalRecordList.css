@@ -1,0 +1,84 @@
+.medicalRecord-container{
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Quicksand', 'Roboto', sans-serif;
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+.history-card {
+    overflow-y: auto;
+    height: 70vh;
+    padding: 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgb(110, 122, 230, 0.8);
+    width: 35%;
+    text-align: left; 
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.history-item {
+    background-color: transparent;
+    border: 2px solid #6e7ae6;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.history-item:hover {
+    background-color: #e0e5f9;
+}
+
+.history-item p {
+    margin: 5px 0;
+    color: #606060;
+}
+
+.view-details {
+    color: #6e7ae6;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.no-history-message {
+    color: #606060;
+    text-align: center;
+    font-size: 1rem;
+    margin: 20px 0;
+    width: 100%;
+}
+
+
+.close-button-medicalRecord {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    color: #6e7ae6;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .close-button-medicalRecord:hover {
+    color: #5563c1;
+    transform: scale(1.2);
+  }

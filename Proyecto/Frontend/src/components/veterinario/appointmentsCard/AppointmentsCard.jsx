@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import editImage from "../../../assets/EditarMascota.jpg";
 import ConfirmationModal from "../../../modals/ConfirmationModal/ConfirmationModal";
 import "./AppointmentsCard.css";
 
 const AppointmentsCard = ({ appointment, onSelectedPet }) => {
+    const navigate = useNavigate();
     const [isChecked, setIsChecked] = useState(false); 
     const [isModalOpen, setIsModalOpen] = useState(false); 
 
@@ -41,7 +43,9 @@ const AppointmentsCard = ({ appointment, onSelectedPet }) => {
             </div>
             <div className="appointments-actions">
                 <div className="history-container">
-                    <button className="history-btn">
+                    <button className="history-btn"
+                    onClick={() => navigate(`/historial-mascota/${appointment.pet.id}`)}
+                    >
                         <i className="fas fa-history"></i>
                     </button>
                     <label className="checkbox-label">
