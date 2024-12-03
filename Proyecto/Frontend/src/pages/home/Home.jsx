@@ -14,6 +14,8 @@ import AppointmentAssignment from "../../components/veterinario/appointmentAssig
 import VaccineAssignment from "../../components/veterinario/vaccineAssignment/VaccineAssignment";
 import MedicalRecordList from "../../components/veterinario/medicalRecordList/MedicalRecordList";
 import MedicalRecordCard from "../../components/veterinario/medicalRecordCard/MedicalRecordCard";
+import Pets from "../../components/administrador/Pets/Pets";
+import HomeAdmin from "../../pages/aministrador/HomeAdmin"
 
 const Home = () => {
   return (
@@ -23,7 +25,7 @@ const Home = () => {
         <Route path="/informacion-mascota/:appointmentId" element={<SelectedPet />} />
         <Route path="/citas-veterinario" element={<Appointments />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<HomeClient />} />
+        <Route path="/" element={<HomeClient  />} />
         <Route path="/sobre-nosotros" element={<HomeClient />} />
         <Route path="/registrar-mascota" element={<PetRegistration />} />
         <Route path="/agendar-cita" element={<Appointment />} />
