@@ -1,4 +1,4 @@
-.pet-admin-container {
+.my-appointments-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,14 @@
     flex-direction: column;
 }
 
-.close-btn-pet-admin {
+.appointments-list{
+    width: 100%; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 0;
+    box-sizing: border-box;
+}
+.boton-salir {
     position: fixed;
     top: 40px;
     right: 50px;
@@ -19,20 +26,19 @@
     color: #6e7ae6;
     cursor: pointer;
     transition: transform 0.2s ease, color 0.2s ease;
-  }
-  
-  .close-btn-pet-admin:hover {
+}
+
+.boton-salir:hover {
     color: #5563c1;
     transform: scale(1.2);
-  }
-  
+}
 
-#decoracion-image-top-left {
-    position: fixed;
+
+#decoracion-image-top-left{
+     position: fixed;
     top: 0;
     left: 0;
     width: 20vw;
     max-width: 100%;
     transform: rotate(180deg) scaleX(-1);
-
 }

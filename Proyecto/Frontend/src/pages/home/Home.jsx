@@ -14,10 +14,15 @@ import AppointmentAssignment from "../../components/veterinario/appointmentAssig
 import VaccineAssignment from "../../components/veterinario/vaccineAssignment/VaccineAssignment";
 import MedicalRecordList from "../../components/veterinario/medicalRecordList/MedicalRecordList";
 import MedicalRecordCard from "../../components/veterinario/medicalRecordCard/MedicalRecordCard";
+
 import Pets from "../../components/administrador/Pets/Pets";
 import HomeAdmin from "../../pages/administrador/HomeAdmin";
 import UsersList from "../../components/administrador/usersList/UsersList";
 import SelectedUser from "../../components/administrador/selectedUser/SelectedUser";
+import VaccinationCardAdmin from "../../components/administrador/vaccinationCardAdmin/VaccinationCardAdmin";
+import RecordListAdmin from "../../components/administrador/recordListAdmin/RecordListAdmin";
+import RecordCardAdmin from "../../components/administrador/recordCardAdmin/RecordCardAdmin";
+import AppointmentAdmin from "../../components/administrador/appointmentAdmin/AppointmentAdmin";
 
 const Home = () => {
   return (
@@ -42,7 +47,11 @@ const Home = () => {
         <Route path="/admin" element={<HomeAdmin />} />
         <Route path="/usuarios-admin" element={<UsersList />} />
         <Route path="/perfil-usuario/:userId" element={<SelectedUser />} />
-
+        <Route path="/mascotas-admin" element={<Pets />} />
+        <Route path="/tarjeta-vacunas-admin/:petId" element={<VaccinationCardAdmin />} />
+        <Route path="/historial-mascota-admin/:petId" element={<RecordListAdmin />} />
+        <Route path="/detalles-historial-admin/:recordId" element={<RecordCardAdmin />} />
+        <Route path="/citas-admin" element={<AppointmentAdmin />} />
       </Routes>
     </Router>
   );

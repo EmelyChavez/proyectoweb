@@ -12,10 +12,10 @@ const HomeAdmin = () => {
             <button className="btns" onClick={() => navigate("/usuarios-admin")}>
                 <span>Veterinarios</span>
             </button>
-            <button className="btns">
+            <button className="btns" onClick={() => navigate("/mascotas-admin")}>
                 <span>Mascotas</span>
             </button>
-            <button className="btns">
+            <button className="btns" onClick={() => navigate("/citas-admin")}>
                 <span>Citas</span>
             </button>
             <button className="logout-btns">

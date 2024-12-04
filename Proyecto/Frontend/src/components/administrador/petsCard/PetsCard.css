@@ -1,4 +1,4 @@
-.pet-card {
+.pet-admin-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,7 +10,7 @@
     overflow: hidden; 
   }
   
-  .pet-image {
+  .pet-admin-image {
     width: 120px;
     height: 120px;
     margin: 24px;
@@ -18,40 +18,31 @@
     border-radius: 50%;
   }
   
-  .pet-info {
+  .pet-admin-info {
     flex: 1;
     margin-left: 24px;
   }
   
-  .pet-name {
+  .pet-admin-name {
     font-size: 1.5rem;
     font-weight: 700;
     color: #606060;
   }
   
-  .pet-breed {
+  .pet-admin-breed {
     font-size: 1.1rem;
     color: #9E9E9E;
     margin-top: 8px;
     font-weight: bold;
   }
   
-  .pet-actions {
+  .pet-admin-actions {
     display: flex;
     align-items: center;
   }
   
-  .delete-btn {
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #606060;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    position: relative; 
-    left: 60px; 
-  }
-  .view-btn{
+  
+  .view-btnpet-admin{
     background: transparent;
     border: none;
     font-size: 2rem;
@@ -60,16 +51,13 @@
     position: relative; 
     left: -40px; 
   }
-  .right-container{
+  .right-container-pet-admin{
     padding: 70px;
     transform: translateX(40%);
     background-color: #6E7AE6;
   }
-  .delete-btn:hover {
-    color: #e94e77;
-  }
   
-  .history-btn {
+  .history-btn-pet-admin {
     background: transparent;
     border: none;
     font-size: 2rem;

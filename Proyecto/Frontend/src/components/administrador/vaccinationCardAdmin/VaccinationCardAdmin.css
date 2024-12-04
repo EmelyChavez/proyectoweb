@@ -1,0 +1,193 @@
+.vaccination-card-admin-card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5faff;
+  font-family: 'Quicksand', 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.title-admin-card {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.details-wrapper-admin-card {
+  display: grid;
+  grid-template-areas: 
+    "details details details"
+    "header header header";
+  gap: 20px;
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.details-container-admin-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  grid-area: details;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.detail-admin-card {
+  border: 3px solid #6e7ae6;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  width: 180px;
+}
+
+.male-icon-admin-card,
+.female-icon-admin-card {
+  font-size: 1.8rem;
+}
+
+.male-icon-admin-card {
+  color: #19486d;
+}
+
+.female-icon-admin-card {
+  color: #d86dc1;
+}
+
+.breed-admin-card {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  color: #606060;
+}
+
+.vaccination-info-admin-card {
+  margin-left: 60px;
+  margin-top: 20px;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.vaccine-header-admin-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 40px;
+  margin-top: 20px;
+  border: 3px solid #6e7ae6;
+  border-radius: 20px;
+  background: #f5f8ff;
+  grid-area: header;
+}
+
+.vaccine-header-admin-card h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #9e9e9e;
+}
+
+.vaccination-list-admin-card {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+.vaccine-item-admin-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #606060;
+}
+
+.vaccine-item-admin-card:nth-child(even) {
+  background: #f5faff;
+}
+
+.vaccination-list-admin-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.vaccination-list-admin-card::-webkit-scrollbar-thumb {
+  background-color: #6e7ae6;
+  border-radius: 10px;
+}
+
+.vaccination-list-admin-card::-webkit-scrollbar-track {
+  background: #f5faff;
+}
+
+.close-button-admin-card {
+  position: fixed;
+  top: 40px;
+  right: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: #6e7ae6;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-button-admin-card:hover {
+  color: #5563c1;
+  transform: scale(1.2);
+}
+
+.pet-details-admin-card {
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  flex: 1.5;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pet-photo-admin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vaccination-image-admin-card {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #9e9e9e;
+}
+
+.data-admin-card {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #606060;
+}
+
+#decoracion-image-left-admin-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20vw;
+  max-width: 100%;
+}
+  
