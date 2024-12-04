@@ -1,0 +1,108 @@
+.edit-role-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Quicksand', 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #19486D;
+  margin-bottom: 1rem;
+}
+
+.edit-role-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(110, 122, 230, 0.8);
+  padding: 50px;
+  width: 35%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.edit-role-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-role-form select,
+.edit-role-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 3px solid #6E7AE6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Quicksand', sans-serif;
+  outline: none;
+  color: #606060;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.edit-role-button {
+  background-color: #6E7AE6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.edit-role-button:hover {
+  background-color: #5563c1;
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: #6E7AE6;
+  border: 2px solid #6E7AE6;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #6E7AE6;
+  color: white;
+}
+
+#decoracion-image-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20vw;
+  max-width: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: #6E7AE6;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #5563c1;
+  transform: scale(1.2);
+}

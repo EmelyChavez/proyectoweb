@@ -9,7 +9,7 @@ const HomeAdmin = () => {
   return (
     <div className="home-container">
         <div className="top-right-buttons">
-            <button className="btns">
+            <button className="btns" onClick={() => navigate("/usuarios-admin")}>
                 <span>Veterinarios</span>
             </button>
             <button className="btns">

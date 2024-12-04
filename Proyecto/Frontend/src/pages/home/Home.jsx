@@ -14,6 +14,9 @@ import AppointmentAssignment from "../../components/veterinario/appointmentAssig
 import VaccineAssignment from "../../components/veterinario/vaccineAssignment/VaccineAssignment";
 import MedicalRecordList from "../../components/veterinario/medicalRecordList/MedicalRecordList";
 import MedicalRecordCard from "../../components/veterinario/medicalRecordCard/MedicalRecordCard";
+import HomeAdmin from "../../pages/administrador/HomeAdmin";
+import UsersList from "../../components/administrador/usersList/UsersList";
+import SelectedUser from "../../components/administrador/selectedUser/SelectedUser";
 
 const Home = () => {
   return (
@@ -34,6 +37,11 @@ const Home = () => {
         <Route path="/asignar-vacuna/:petId/:appointmentId" element={<VaccineAssignment />} />
         <Route path="/historial-mascota/:petId" element={<MedicalRecordList />} />
         <Route path="/detalles-historial/:recordId" element={<MedicalRecordCard />} />
+
+        <Route path="/admin" element={<HomeAdmin />} />
+        <Route path="/usuarios-admin" element={<UsersList />} />
+        <Route path="/perfil-usuario/:userId" element={<SelectedUser />} />
+
       </Routes>
     </Router>
   );

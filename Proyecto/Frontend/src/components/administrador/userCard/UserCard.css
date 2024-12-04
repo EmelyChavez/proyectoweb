@@ -1,0 +1,87 @@
+.user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 120px;
+    border: 3px solid #6e7ae6;
+    margin: 16px 0;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden; 
+}
+
+.user-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 24px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular, como el avatar de un usuario */
+}
+
+.user-info {
+    flex: 1;
+    margin-left: 24px;
+}
+
+.user-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #606060;
+}
+
+.user-email {
+    font-size: 1.1rem;
+    color: #9E9E9E;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.user-role {
+    font-size: 1rem;
+    color: #6E7AE6;
+    margin-top: 4px;
+    font-style: italic; /* Opcional para diferenciar */
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.delete-user-btn {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #606060;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative; 
+    left: -60px; 
+}
+
+.delete-btn:hover {
+    color: #e94e77;
+}
+
+
+.role-select {
+    font-size: 1rem;
+    color: #606060;
+    background-color: #f9f9f9;
+    border: 1px solid #6e7ae6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.role-select:hover {
+    border-color: #4b5ae2;
+}
+
+.role-select:focus {
+    outline: none;
+    border-color: #e94e77;
+}
